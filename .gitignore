@@ -1,0 +1,16 @@
+# Python
+.venv/
+.venv.zip
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE caches
+.idea/caches/
+.idea/workspace.xml
+
+# Large model weights (exceed GitHub's 100MB limit)
+models/*/model*.safetensors
+*.log

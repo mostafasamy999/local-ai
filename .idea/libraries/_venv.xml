@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name=".venv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.venv.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
