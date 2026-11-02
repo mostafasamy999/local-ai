@@ -6,7 +6,7 @@ used to build dataset/v1 — update it first when the real specs change,
 then regenerate the dataset.
 
 ## What the assistant can do in v1
- 
+  
 Three read-only query actions. No create/edit/status-change actions yet
 (those need an activity already selected on screen, which the chat
 doesn't have context for in v1).
