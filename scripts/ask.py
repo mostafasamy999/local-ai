@@ -14,20 +14,27 @@ its output unreliable. Instead the code:
     - finds a category the user named (visits only) by matching its name
     - uses the lookup's own (localized) status names in the answer
 
-The API call still needs TALENTLINK_BASE_URL and TALENTLINK_TOKEN as env
-vars (the token never goes in the file). Without them the answer uses
-DEMO DATA.
+The API call uses "auth": {"baseUrl", "token"} from the file (env vars
+TALENTLINK_BASE_URL / TALENTLINK_TOKEN override it). If the token is
+missing or the API rejects it (401, e.g. SESSION_REPLACED after the app
+logs in again), the script asks for a new one, reads it from the
+clipboard, saves it back to the file and retries.
 
 Usage:
     cd "/Users/mostafasamy/work/local ai"
     source .venv/bin/activate
-    python scripts/ask.py examples/chat_request.json
-    python scripts/ask.py examples/chat_request.json --debug
+    python scripts/ask.py my_request.json
+    python scripts/ask.py my_request.json --debug     # show steps ①②③
+    python scripts/ask.py my_request.json --offline   # demo data, no API call
 """
 import os
+import re
 import sys
 import json
+import base64
+import subprocess
 import urllib.error
+from datetime import datetime
 
 from mlx_lm import load
 
@@ -70,6 +77,52 @@ def apply_lookups(intent, message, lookups):
     return intent
 
 
+def clean_token(token):
+    token = (token or "").strip()
+    return token[len("Bearer "):].strip() if token.startswith("Bearer ") else token
+
+
+def token_expiry(token):
+    """Read `exp` from the JWT payload (no signature check — just for a hint)."""
+    try:
+        payload = token.split(".")[1]
+        data = json.loads(base64.urlsafe_b64decode(payload + "=" * (-len(payload) % 4)))
+        return datetime.fromtimestamp(int(data["exp"]))
+    except (IndexError, KeyError, ValueError):
+        return None
+
+
+def ask_for_token(reason):
+    """Ask the user for a new token. Read from the clipboard, because macOS
+    cuts pasted terminal lines at 1024 chars and the token is ~1900."""
+    print(f"\n🔑 {reason}")
+    print("   Copy the token from the app log (the part after 'Bearer', or with it),")
+    input("   then press Enter here to read it from the clipboard… ")
+    text = subprocess.run(["pbpaste"], capture_output=True, text=True).stdout
+    # Copied straight from the log, the token is wrapped over many lines like
+    # "I/flutter (17663): ║ QgICAg…" — drop those prefixes, line breaks and spaces.
+    text = re.sub(r"I/flutter \(\d+\):", "", text).replace("║", "")
+    token = "".join(clean_token(text.strip()).split())
+    token = clean_token(token.replace("Bearer", "Bearer ", 1))
+    if token.count(".") != 2:
+        print("   ✗ Clipboard doesn't look like a token (expected xxx.yyy.zzz). Try again.")
+        return None
+    exp = token_expiry(token)
+    if exp and exp < datetime.now():
+        print(f"   ✗ This token expired at {exp}. Copy a newer one.")
+        return None
+    print(f"   ✓ Token read ({len(token)} chars, valid until {exp or 'unknown'})")
+    return token
+
+
+def save_token(path, request, token):
+    """Keep the new token in the request file (gitignored) for the next run."""
+    request.setdefault("auth", {})["token"] = token
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(request, f, ensure_ascii=False, indent=2)
+    print(f"   ✓ Saved to {path}")
+
+
 def main():
     paths = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not paths:
@@ -83,14 +136,22 @@ def main():
     lookups = request.get("lookups") or {}
 
     # Server + token: env vars win; otherwise take them from the file's "auth".
+    # With a server but no token, ask for one (--offline skips this → demo data).
     auth = request.get("auth") or {}
     if auth.get("baseUrl"):
         os.environ.setdefault("TALENTLINK_BASE_URL", auth["baseUrl"])
     if auth.get("token"):
-        os.environ.setdefault("TALENTLINK_TOKEN", auth["token"].removeprefix("Bearer ").strip()
-                              if hasattr(str, "removeprefix") else auth["token"].replace("Bearer ", "", 1).strip())
+        os.environ.setdefault("TALENTLINK_TOKEN", clean_token(auth["token"]))
+    if os.environ.get("TALENTLINK_BASE_URL") and not os.environ.get("TALENTLINK_TOKEN") \
+            and "--offline" not in sys.argv:
+        token = None
+        while not token:
+            token = ask_for_token("No token in the file.")
+        os.environ["TALENTLINK_TOKEN"] = token
+        save_token(paths[0], request, token)
 
-    online = bool(os.environ.get("TALENTLINK_BASE_URL") and os.environ.get("TALENTLINK_TOKEN"))
+    online = bool(os.environ.get("TALENTLINK_BASE_URL") and os.environ.get("TALENTLINK_TOKEN")) \
+        and "--offline" not in sys.argv
     print("Online — calling", os.environ["TALENTLINK_BASE_URL"] if online
           else "Offline — answers use DEMO DATA (set TALENTLINK_BASE_URL and TALENTLINK_TOKEN for real ones)")
 
@@ -153,15 +214,29 @@ def main():
         print("assistant > [DEMO DATA]", write_answer(intent["action"], items, body, arabic, False, status_names))
         return
 
-    try:
-        items, truncated = fetch_all(body)
-    except urllib.error.HTTPError as e:
-        print(f"③ API error {e.code}: {e.read().decode('utf-8', 'replace')[:300]}")
-        if e.code == 401:
-            print("   → token expired or wrong. Log in again and re-export TALENTLINK_TOKEN.")
-        return
-    except (urllib.error.URLError, RuntimeError, TimeoutError) as e:
-        print("③ API call failed:", e)
+    # On 401, ask for a fresh token and retry (up to 3 times). The model's
+    # answer is already computed, so a retry doesn't reload or re-run it.
+    for attempt in range(3):
+        try:
+            items, truncated = fetch_all(body)
+            break
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")
+            if e.code != 401:
+                print(f"③ API error {e.code}: {detail[:300]}")
+                return
+            reason = ("Session replaced — the app logged in again after this token was taken."
+                      if "SESSION_REPLACED" in detail else "Token rejected (401).")
+            token = ask_for_token(f"{reason} Paste a token from your latest login.")
+            if not token:
+                continue
+            os.environ["TALENTLINK_TOKEN"] = token
+            save_token(paths[0], request, token)
+        except (urllib.error.URLError, RuntimeError, TimeoutError) as e:
+            print("③ API call failed:", e)
+            return
+    else:
+        print("③ Still no valid token after 3 tries — stopping.")
         return
 
     debug(f"③ API returned {len(items)} item(s)")
