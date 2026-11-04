@@ -1,0 +1,52 @@
+what is base files thy are important 
+ie i need to know
+
+the qween base model where it download 
+and what it files to train it 
+after train where is final model 
+how to run this modle locally 
+how to run it to can run flutter app
+
+Located the downloaded base model and the v2 adapter files
+Your “model” is really 2 parts working together: a big base model that you never change, and a small trained add-on (the adapter).
+
+1. The Qwen base model: where it’s downloaded
+Name	mlx-community/Qwen2.5-3B-Instruct-4bit (set in scripts/train.sh and the other scripts)
+Where it’s saved	~/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/
+Size	1.6 GB
+Main files	model.safetensors (the weights), tokenizer.json, config.json
+It’s downloaded automatically from Hugging Face the first time any script runs. That’s the Fetching 9 files line you saw. It’s not in your project or in git, so a new Mac downloads it again by itself.
+
+2. The files used for training
+File	Role
+dataset/v2/train.jsonl	131 examples the model learns from (question → correct JSON)
+dataset/v2/valid.jsonl	27 examples used to check progress during training
+scripts/train.sh	The training command: 600 steps, LoRA on 4 layers
+specs/v2/activities.md	The rules the examples follow (not used by training directly, but it’s the reference)
+To train: ./scripts/train.sh v3 reads dataset/v3/ and writes adapters/v3/.
+
+3. The final model after training
+adapters/v2/adapters.safetensors (6.6 MB). This is the trained result, and it’s in git.
+
+File in adapters/v2/	What it is
+adapters.safetensors	The final trained adapter. This is the important one
+adapter_config.json	The settings it was trained with (base model, LoRA rank 8, 600 steps…). It’s needed to load the adapter
+0000100…0000600_adapters.safetensors	Snapshots saved every 100 steps. Only needed if a mid-training version turned out better
+adapters/current → v2	A shortcut to the version that’s live. deploy.sh and rollback.sh change where it points
+models/hr-assistant-v2/ is an old merged copy (base and adapter combined). It isn’t used anymore, because deploy.sh notes that merging changed some answers.
+
+4. Run the model locally (terminal only)
+This loads the base model and adapters/v2 and lets you type questions. Add --debug to see the JSON the model produced.
+
+5. Run it for the Flutter app
+Terminal 1 is the model server; leave it running:
+
+Terminal 2 is the API that the app calls; leave it running:
+
+Get the Mac’s IP and put it in the Flutter app:
+
+Then set it in talentlink/lib/src/data/sources/remote/new_activities_chat/new_activities_chat_api_service.dart:
+
+The phone and the Mac must be on the same Wi-Fi. On a real iPhone it won’t connect until the Info.plist fix from the review is added; Android works as is.
+
+On a new Mac you only need to copy the project (git clone), which includes the adapters and datasets. Then create .venv; the base model downloads itself on the first run. The full steps are in setup.txt.
