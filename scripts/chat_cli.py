@@ -36,8 +36,14 @@ from mlx_lm import load
 from evaluate_v2 import MODEL, chat
 from map_to_api import SessionContext, Directory, build_e2_request, ClarificationNeeded
 
-VERSION = sys.argv[1] if len(sys.argv) > 1 else "v2"
+DEBUG = "--debug" in sys.argv
+_positional = [a for a in sys.argv[1:] if not a.startswith("--")]
+VERSION = _positional[0] if _positional else "v2"
 ADAPTER = f"./adapters/{VERSION}"
+
+# Same ids as the system prompt — used to label demo items.
+STATUS_NAMES = {1: "Pending", 2: "In progress", 3: "Cancelled", 4: "Completed",
+                5: "Rejected", 7: "Partially completed"}
 
 ENDPOINT = "Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser"
 PAGE_SIZE = 50
@@ -97,6 +103,21 @@ def fetch_all(body):
         if len(batch) < PAGE_SIZE:
             return items, False
     return items, True  # hit the cap, there may be more
+
+
+def demo_items(body):
+    """Fake API result for offline mode: 3 items that match the request's
+    status filter (or a mix if none), dated inside the requested range."""
+    data = body["data"]
+    status_id = data["statusId"]
+    statuses = [status_id] * 3 if status_id else [1, 4, 1]
+    day = (data["fromDateTime"] or data["endDateTime"] or "")[:10]
+    kind = "Visit" if data["typeId"] == 2 else "Task"
+    return [
+        {"masterName": f"Demo {kind} {i}", "dateStr": day,
+         "status": {"id": s, "name": STATUS_NAMES.get(s, "?")}}
+        for i, s in enumerate(statuses, 1)
+    ]
 
 
 def write_answer(action, items, body, arabic, truncated):
