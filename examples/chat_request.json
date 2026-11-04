@@ -1,0 +1,36 @@
+{
+  "message": "how many pending tasks do i have today",
+
+  "session": {
+    "userId": 0,
+    "subscriberId": 0,
+    "companyId": 0,
+    "employeeId": 0,
+    "langId": "en",
+    "deviceTypeCode": 0,
+    "deviceToken": "string",
+    "deviceSerial": "SAMSUNGNOTE",
+    "appVersion": "string",
+    "oSVersion": "string"
+  },
+
+  "lookups": {
+    "categories": [
+      {"id": 1, "name": "Maintenance"},
+      {"id": 2, "name": "Sales"}
+    ],
+    "priorities": [
+      {"id": 1, "name": "Low"},
+      {"id": 2, "name": "Medium"},
+      {"id": 3, "name": "High"}
+    ],
+    "statuses": [
+      {"id": 1, "name": "Pending"},
+      {"id": 2, "name": "In progress"},
+      {"id": 3, "name": "Cancelled"},
+      {"id": 4, "name": "Completed"},
+      {"id": 5, "name": "Rejected"},
+      {"id": 7, "name": "Partially completed"}
+    ]
+  }
+}

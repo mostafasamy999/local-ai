@@ -30,6 +30,7 @@ import json
 import urllib.error
 import urllib.request
 from collections import Counter
+from datetime import datetime
 
 from mlx_lm import load
 
@@ -93,14 +94,21 @@ def call_api(body):
 
 
 def fetch_all(body):
-    """Page through E2 until a short page comes back, so the count is the real total."""
+    """Page through E2 so the count is the real total.
+    The activities screen's API returns {totalCount, items}; the older one
+    returns a bare list. Both are handled."""
     items = []
     body["data"]["pageSize"] = PAGE_SIZE
     for page in range(MAX_PAGES):
         body["data"]["skip"] = page * PAGE_SIZE
-        batch = call_api(body)
+        result = call_api(body)
+        if isinstance(result, dict):
+            batch = result.get("items") or []
+            total = result.get("totalCount")
+        else:
+            batch, total = result, None
         items.extend(batch)
-        if len(batch) < PAGE_SIZE:
+        if len(batch) < PAGE_SIZE or (total is not None and len(items) >= total):
             return items, False
     return items, True  # hit the cap, there may be more
 
@@ -120,30 +128,73 @@ def demo_items(body):
     ]
 
 
-def write_answer(action, items, body, arabic, truncated):
-    """Turn the API list into a sentence. Counting is done here, not by the model."""
+STATUS_NAMES_AR = {1: "معلقة", 2: "جارية", 3: "ملغية", 4: "مكتملة",
+                   5: "مرفوضة", 7: "مكتملة جزئياً"}
+
+
+def describe_period(start, end, arabic):
+    """'today' / 'on 2026-11-03' / 'from X to Y' — whatever reads naturally."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    if start and start == end:
+        if start == today:
+            return "النهارده" if arabic else "today"
+        return f"يوم {start}" if arabic else f"on {start}"
+    if arabic:
+        return f"من {start or 'البداية'} لحد {end or 'دلوقتي'}"
+    return f"from {start or 'the start'} to {end or 'now'}"
+
+
+def arabic_count(n, singular, dual, plural):
+    """Arabic number agreement: 1 مهمة واحدة, 2 مهمتين, 3-10 مهام, 11+ مهمة."""
+    if n == 1:
+        return f"{singular} واحدة"
+    if n == 2:
+        return dual
+    if 3 <= n <= 10:
+        return f"{n} {plural}"
+    return f"{n} {singular}"
+
+
+def write_answer(action, items, body, arabic, truncated, status_names=None):
+    """Turn the API list into a sentence. Counting is done here, not by the model.
+    status_names: {id: name} from the app's status lookup; when given, those
+    (already localized) names replace the built-in ones."""
+    en_names = status_names or STATUS_NAMES
+    ar_names = status_names or STATUS_NAMES_AR
     data = body["data"]
-    start = (data["fromDateTime"] or "")[:10] or "…"
-    end = (data["endDateTime"] or "")[:10] or "…"
+    start = (data["fromDateTime"] or "")[:10]
+    end = (data["endDateTime"] or "")[:10]
+    period = describe_period(start, end, arabic)
+    status_id = data["statusId"]
     n = len(items)
-    by_status = Counter((it.get("status") or {}).get("name") or "?" for it in items)
-    breakdown = ", ".join(f"{count} {name}" for name, count in by_status.most_common())
+    visits = action == "get_visits"
+
+    # When the user filtered by status, it goes in the sentence ("3 pending tasks");
+    # otherwise list how many of each status came back.
+    by_status = Counter((it.get("status") or {}).get("id") for it in items)
 
     if arabic:
-        noun = "زيارة" if action == "get_visits" else "مهمة"
+        singular, dual, plural = ("زيارة", "زيارتين", "زيارات") if visits else ("مهمة", "مهمتين", "مهام")
+        adjective = f" {ar_names[status_id]}" if status_id in ar_names else ""
         if n == 0:
-            text = f"مفيش أي {noun} من {start} لحد {end}."
+            text = f"مفيش عندك أي {singular}{adjective} {period}."
         else:
-            text = f"عندك {n} {noun} من {start} لحد {end}: {breakdown}."
+            text = f"عندك {arabic_count(n, singular, dual, plural)}{adjective} {period}."
+            if not status_id and len(by_status) > 1:
+                text += " (" + "، ".join(
+                    f"{c} {ar_names.get(s, '?')}" for s, c in by_status.most_common()) + ")"
         if truncated:
-            text += " (فيه أكتر من كده، دي أول {} بس)".format(n)
+            text += f" (فيه أكتر من كده، دي أول {n} بس)"
     else:
-        noun = "visit" if action == "get_visits" else "task"
-        plural = noun if n == 1 else noun + "s"
+        noun = "visit" if visits else "task"
+        adjective = f"{en_names[status_id].lower()} " if status_id in en_names else ""
         if n == 0:
-            text = f"You have no {plural} between {start} and {end}."
+            text = f"You have no {adjective}{noun}s {period}."
         else:
-            text = f"You have {n} {plural} between {start} and {end}: {breakdown}."
+            text = f"You have {n} {adjective}{noun}{'' if n == 1 else 's'} {period}."
+            if not status_id and len(by_status) > 1:
+                text += " (" + ", ".join(
+                    f"{c} {en_names.get(s, '?').lower()}" for s, c in by_status.most_common()) + ")"
         if truncated:
             text += f" (showing the first {n} only — there are more)"
 
@@ -156,6 +207,11 @@ def write_answer(action, items, body, arabic, truncated):
     return "\n".join(lines)
 
 
+def debug(*args):
+    if DEBUG:
+        print(*args)
+
+
 def handle(model, tokenizer, user_text, session, directory):
     raw = chat(model, tokenizer, user_text)
     try:
@@ -165,16 +221,16 @@ def handle(model, tokenizer, user_text, session, directory):
         print(raw)
         return
 
-    print("① model intent:", json.dumps(intent, ensure_ascii=False))
+    debug("① model intent:", json.dumps(intent, ensure_ascii=False))
 
     if intent.get("refused"):
-        print("\nassistant >", intent.get("refusal_reason"))
+        print("assistant >", intent.get("refusal_reason"))
         return
     if intent.get("needs_clarification"):
-        print("\nassistant >", intent.get("clarification_question"))
+        print("assistant >", intent.get("clarification_question"))
         return
     if intent.get("action") not in ("get_visits", "get_tasks"):
-        print(f"\n(action '{intent.get('action')}' has no API mapping yet — only get_visits / get_tasks do)")
+        print(f"assistant > (action '{intent.get('action')}' has no API mapping yet — only visits and tasks do)")
         return
 
     lookup_session = session or SessionContext(userId=0, employeeId=0, companyId=0, subscriberId=0)
@@ -182,16 +238,17 @@ def handle(model, tokenizer, user_text, session, directory):
     try:
         body = build_e2_request(intent, lookup_session, directory)
     except ClarificationNeeded as e:
-        print("\nassistant >", e.question)
+        print("assistant >", e.question)
         return
 
     d = body["data"]
-    print(f"② request: typeId={d['typeId']} statusId={d['statusId']} "
+    debug(f"② request: typeId={d['typeId']} statusId={d['statusId']} "
           f"from={d['fromDateTime']} to={d['endDateTime']} onlyMe={d['onlyMe']}")
 
     if session is None:
-        print("③ API call skipped (credentials not set). Request body that would be sent:")
-        print(json.dumps(body, ensure_ascii=False, indent=2))
+        debug("③ no credentials — using demo items instead of the API")
+        answer = write_answer(intent["action"], demo_items(body), body, is_arabic(user_text), False)
+        print("assistant > [DEMO DATA]", answer)
         return
 
     try:
@@ -205,15 +262,15 @@ def handle(model, tokenizer, user_text, session, directory):
         print("③ API call failed:", e)
         return
 
-    print(f"③ API returned {len(items)} item(s)")
-    print("\nassistant >", write_answer(intent["action"], items, body, is_arabic(user_text), truncated))
+    debug(f"③ API returned {len(items)} item(s)")
+    print("assistant >", write_answer(intent["action"], items, body, is_arabic(user_text), truncated))
 
 
 def main():
     session, missing = load_session()
     if session is None:
-        print("Offline mode — missing:", ", ".join(missing))
-        print("(model + mapping only; set those env vars to get real answers)\n")
+        print("Offline mode — answers use DEMO DATA, not your real tasks.")
+        print("(set these env vars for real answers:", ", ".join(missing) + ")\n")
     else:
         print(f"Online mode — calling {os.environ['TALENTLINK_BASE_URL']}\n")
 
