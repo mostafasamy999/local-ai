@@ -1,0 +1,13 @@
+Steps each time you test
+
+1. Open the app and go to Activities. Copy the console output and paste it into test/logs.txt, replacing everything.
+
+2. Get the token:
+
+cd "/Users/mostafasamy/work/local ai" && python3 test/run.py
+
+3. Run the question. The file path now includes test/:
+
+source .venv/bin/activate && python scripts/ask.py test/my_request.json --debug
+
+4. If it shows 🔑, just press Enter. Step 2 already put the token in the clipboard.

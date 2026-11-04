@@ -23,9 +23,9 @@ clipboard, saves it back to the file and retries.
 Usage:
     cd "/Users/mostafasamy/work/local ai"
     source .venv/bin/activate
-    python scripts/ask.py my_request.json
-    python scripts/ask.py my_request.json --debug     # show steps ①②③
-    python scripts/ask.py my_request.json --offline   # demo data, no API call
+    python scripts/ask.py test/my_request.json
+    python scripts/ask.py test/my_request.json --debug     # show steps ①②③
+    python scripts/ask.py test/my_request.json --offline   # demo data, no API call
 """
 import os
 import re
@@ -96,8 +96,9 @@ def ask_for_token(reason):
     """Ask the user for a new token. Read from the clipboard, because macOS
     cuts pasted terminal lines at 1024 chars and the token is ~1900."""
     print(f"\n🔑 {reason}")
-    print("   Copy the token from the app log (the part after 'Bearer', or with it),")
-    input("   then press Enter here to read it from the clipboard… ")
+    print("   In another terminal: paste the app log into test/logs.txt, run `python test/run.py`")
+    print("   (it copies the latest token), or copy the token from the log yourself.")
+    input("   Then press Enter here to read it from the clipboard… ")
     text = subprocess.run(["pbpaste"], capture_output=True, text=True).stdout
     # Copied straight from the log, the token is wrapped over many lines like
     # "I/flutter (17663): ║ QgICAg…" — drop those prefixes, line breaks and spaces.
@@ -152,8 +153,12 @@ def main():
 
     online = bool(os.environ.get("TALENTLINK_BASE_URL") and os.environ.get("TALENTLINK_TOKEN")) \
         and "--offline" not in sys.argv
-    print("Online — calling", os.environ["TALENTLINK_BASE_URL"] if online
-          else "Offline — answers use DEMO DATA (set TALENTLINK_BASE_URL and TALENTLINK_TOKEN for real ones)")
+    if online:
+        print("Online — calling", os.environ["TALENTLINK_BASE_URL"])
+    elif "--offline" in sys.argv:
+        print("Offline (--offline flag) — answers use DEMO DATA, not the API. Run without --offline for real data.")
+    else:
+        print("Offline (no baseUrl in the file's \"auth\") — answers use DEMO DATA, not the API.")
 
     print(f"Loading {MODEL} with adapter {ADAPTER} ...")
     model, tokenizer = load(MODEL, adapter_path=ADAPTER)

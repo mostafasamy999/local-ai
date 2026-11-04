@@ -1,0 +1,273 @@
+I/flutter (17663): from datetime: 2026-11-04 00:00:00.000
+I/flutter (17663): RouteLogger: ⬅️ POP: /Dialog
+I/flutter (17663): └─ 📍 [0] /main
+I/Quality (17663): Skipped: false 5 cost 96.08614 refreshRate 16705581 bit true processName com.ilead.talent.link.talent_link.dev
+I/flutter (17663):
+I/flutter (17663): ╔╣ Request ║ POST
+I/flutter (17663): ║  https://test.talentlink360.com/Developmnet/TalentLink_Dev/TalentLink_Dev_API/api/v2/Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Headers
+I/flutter (17663): ╟ content-type: application/json
+I/flutter (17663): ╟ Authorization:
+I/flutter (17663): ║ Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyMDUiLCJuYW1lIjoiZmluYWwgIHRlc3
+I/flutter (17663): ║ QgICAgY28iLCJzdWJzY3JpYmVySWQiOiIxIiwic2VsZWN0ZWRDb21wYW55SWQiOiI2IiwiZW1wbG95ZWVJZCI6IjMx
+I/flutter (17663): ║ NyIsInJvbGVBY2Nlc3NJZCI6IjEsMiwzLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDE5LD
+I/flutter (17663): ║ IwLDIxLDIyLDIzLDI0LDI1LDI2LDI3LDI4LDI5LDMwLDMxLDMyLDMzLDM0LDM1LDM2LDM3LDM4LDM5LDQwLDQxLDQy
+I/flutter (17663): ║ LDQzLDQ0LDQ1LDQ2LDQ3LDQ4LDQ5LDUwLDUxLDUyLDUzLDU0LDU1LDU2LDU3LDU4LDU5LDYwLDYxLDYyLDYzLDY0LD
+I/flutter (17663): ║ Y1LDY2LDY3LDY4LDY5LDcwLDcxLDcyLDczLDc0LDc1LDc2LDc3LDc4LDc5LDgwLDgxLDgyLDgzLDg0LDg1LDg2LDg3
+I/flutter (17663): ║ LDg4LDg5LDkwLDkxLDkyLDkzLDk0LDk1LDk2LDk3LDk4LDk5LDEwMCwxMDEsMTAyLDEwMywxMDQsMTA1LDEwNiwxMD
+I/flutter (17663): ║ csMTA4LDEwOSwxMTAsMTExLDExMiwxMTMsMTE0LDExNSwxMTYsMTE3LDExOCwxMTksMTIwLDEyMSwxMjIsMTIzLDEy
+I/flutter (17663): ║ NCwxMjUsMTI2LDEyNywxMjgsMTI5LDEzMCwxMzEsMTMyLDEzMywxMzQsMTM1LDEzNiwyNjAsMjYzLDI2NCwyNjUsMj
+I/flutter (17663): ║ Y2LDI3MiwyNzMsMjc0LDI3OCwyODAsMjgxLDI4MiwyODUsMjg2LDI4Nyw3NjcsNzY4LDg5MCw4OTEsODkyLDg5Myw5
+I/flutter (17663): ║ MDAsOTAyLDEwMjgsMTA0MiwxMDQzLDEwNDcsMTA1MCwxMDUxLDEwNTQsMTA1NSwxMDU2LDEwNzQsMTA3OCwxMDc5LD
+I/flutter (17663): ║ EwODAsMTEwNSwxMTA2LDIxMDgsMjEwOSwyMTEwLDIxMTEsMjExMiwyMTEzLDIxMjEsMjEzMCwyMTM1LDIxMzYsMjE0
+I/flutter (17663): ║ MSwyMTQ0LDIxNDYsMjE0NywyMTUwLDIxNTEsMjE1MiwyMTU2LDMwOTAsNjc5OCw2Nzk5LDY4MDAsNjgwMSw2ODAyLD
+I/flutter (17663): ║ Y4MzcsNjgzOCw3MTM5LDczMDcsNzYzMCw3NjMxLDc2MzIsNzYzOCw3NjYyLDkwNjYsOTEzMiIsInBvc2l0aW9uSWQi
+I/flutter (17663): ║ OiIxNiIsImVtcGxveWVlQ29tcGFueUlkIjoiNiIsInBhZ2VzQ2hlY2tzdW0iOiIyODIwNTQ4NTMiLCJtb2R1bGVQYW
+I/flutter (17663): ║ dlc0NoZWNrc3VtIjoiLTE5NDUyMjQ4NDEiLCJ0YWJzQ2hlY2tzdW0iOiIzMzM0NTExNTMiLCJmb3JjZVBhc3N3b3Jk
+I/flutter (17663): ║ Q2hhbmdlIjoiZmFsc2UiLCJpc0VuYWJsZWQiOiJ0cnVlIiwicGFzc3dvcmRWZXJzaW9uIjoiMSIsInN1YnNjcmliZX
+I/flutter (17663): ║ JFbmFibGVkIjoidHJ1ZSIsImNvbXBhbnlFbmFibGVkIjoidHJ1ZSIsInNpZCI6ImM4ZWJmMTBmMzBmZTQ3NDU5M2Iw
+I/flutter (17663): ║ Zjk3OGIxODdiYjM1Iiwic2Vzc2lvblN0YXJ0ZWRBdCI6IjE3OTM3MDMxNDMiLCJuYmYiOjE3OTM3ODQ0MzMsImV4cC
+I/flutter (17663): ║ I6MTc5NDM4OTIzMywiaWF0IjoxNzkzNzg0NDMzLCJpc3MiOiJUYWxlbnRMaW5rMzYwIiwiYXVkIjoiVGFsZW50TGlu
+I/flutter (17663): ║ azM2MCJ9.pOrEjQ51J1alSPHUByQMKZU90ilFHT2h31KOJ9Nn9kM8Ck7lpEbdJIivqImTzShymcA6GBqx7iB3-jDlL
+I/flutter (17663): ║ RwnHA
+I/flutter (17663): ╟ contentType: application/json
+I/flutter (17663): ╟ responseType: ResponseType.json
+I/flutter (17663): ╟ followRedirects: true
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Body
+I/flutter (17663): ╟ userId: 205
+I/flutter (17663): ╟ subscriberId: 1
+I/flutter (17663): ╟ companyId: 6
+I/flutter (17663): ╟ langId: ar
+I/flutter (17663): ╟ deviceTypeCode: 2
+I/flutter (17663): ╟ deviceToken:
+I/flutter (17663): ║ d_cD23q8QUe4fIep8OgWk9:APA91bHlpuZuRBPqnTt59Q9iOUYJ8LtASbm56XyIbVuozdtVKcbSQxr4mGm3sjXs6HS
+I/flutter (17663): ║ r-vHj0BbXIRR2rR8yhlQdUWLvNLSG5a5A8saV-jnMX0eENkPNIHg
+I/flutter (17663): ╟ deviceSerial: TP1A.220905.001
+I/flutter (17663): ╟ appVersion: 1.3.14
+I/flutter (17663): ╟ oSVersion: 13
+I/flutter (17663): ╟ data:
+I/flutter (17663): ║ {typeId: 2, fromDateTime: 2026-11-04T00:00:00, endDateTime: 2026-11-04T23:00:00, statusId:
+I/flutter (17663): ║  null, priorityId: [], categoryId: [], employeeId: [], companyId: [], onlyMe: true, execut
+I/flutter (17663): ║ ionTypeId: null, skip: 0, pageSize: 10, direction: desc, searchValue: }
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ║ {userId: 205, subscriberId: 1, companyId: 6, langId: ar, deviceTypeCode: 2, deviceToken: d
+I/flutter (17663): ║ _cD23q8QUe4fIep8OgWk9:APA91bHlpuZuRBPqnTt59Q9iOUYJ8LtASbm56XyIbVuozdtVKcbSQxr4mGm3sjXs6HSr
+I/flutter (17663): ║ -vHj0BbXIRR2rR8yhlQdUWLvNLSG5a5A8saV-jnMX0eENkPNIHg, deviceSerial: TP1A.220905.001, appVer
+I/flutter (17663): ║ sion: 1.3.14, oSVersion: 13, data: {typeId: 2, fromDateTime: 2026-11-04T00:00:00, endDateT
+I/flutter (17663): ║ ime: 2026-11-04T23:00:00, statusId: null, priorityId: [], categoryId: [], employeeId: [],
+I/flutter (17663): ║ companyId: [], onlyMe: true, executionTypeId: null, skip: 0, pageSize: 10, direction: desc
+I/flutter (17663): ║ , searchValue: }}
+I/flutter (17663):
+I/flutter (17663): ╔╣ Request ║ POST
+I/flutter (17663): ║  https://test.talentlink360.com/Developmnet/TalentLink_Dev/TalentLink_Dev_API/api/v2/Mobile/VisitAndTask/GetTaskAndVisitDashboard
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Headers
+I/flutter (17663): ╟ content-type: application/json
+I/flutter (17663): ╟ Authorization:
+I/flutter (17663): ║ Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyMDUiLCJuYW1lIjoiZmluYWwgIHRlc3
+I/flutter (17663): ║ QgICAgY28iLCJzdWJzY3JpYmVySWQiOiIxIiwic2VsZWN0ZWRDb21wYW55SWQiOiI2IiwiZW1wbG95ZWVJZCI6IjMx
+I/flutter (17663): ║ NyIsInJvbGVBY2Nlc3NJZCI6IjEsMiwzLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDE5LD
+I/flutter (17663): ║ IwLDIxLDIyLDIzLDI0LDI1LDI2LDI3LDI4LDI5LDMwLDMxLDMyLDMzLDM0LDM1LDM2LDM3LDM4LDM5LDQwLDQxLDQy
+I/flutter (17663): ║ LDQzLDQ0LDQ1LDQ2LDQ3LDQ4LDQ5LDUwLDUxLDUyLDUzLDU0LDU1LDU2LDU3LDU4LDU5LDYwLDYxLDYyLDYzLDY0LD
+I/flutter (17663): ║ Y1LDY2LDY3LDY4LDY5LDcwLDcxLDcyLDczLDc0LDc1LDc2LDc3LDc4LDc5LDgwLDgxLDgyLDgzLDg0LDg1LDg2LDg3
+I/flutter (17663): ║ LDg4LDg5LDkwLDkxLDkyLDkzLDk0LDk1LDk2LDk3LDk4LDk5LDEwMCwxMDEsMTAyLDEwMywxMDQsMTA1LDEwNiwxMD
+I/flutter (17663): ║ csMTA4LDEwOSwxMTAsMTExLDExMiwxMTMsMTE0LDExNSwxMTYsMTE3LDExOCwxMTksMTIwLDEyMSwxMjIsMTIzLDEy
+I/flutter (17663): ║ NCwxMjUsMTI2LDEyNywxMjgsMTI5LDEzMCwxMzEsMTMyLDEzMywxMzQsMTM1LDEzNiwyNjAsMjYzLDI2NCwyNjUsMj
+I/flutter (17663): ║ Y2LDI3MiwyNzMsMjc0LDI3OCwyODAsMjgxLDI4MiwyODUsMjg2LDI4Nyw3NjcsNzY4LDg5MCw4OTEsODkyLDg5Myw5
+I/flutter (17663): ║ MDAsOTAyLDEwMjgsMTA0MiwxMDQzLDEwNDcsMTA1MCwxMDUxLDEwNTQsMTA1NSwxMDU2LDEwNzQsMTA3OCwxMDc5LD
+I/flutter (17663): ║ EwODAsMTEwNSwxMTA2LDIxMDgsMjEwOSwyMTEwLDIxMTEsMjExMiwyMTEzLDIxMjEsMjEzMCwyMTM1LDIxMzYsMjE0
+I/flutter (17663): ║ MSwyMTQ0LDIxNDYsMjE0NywyMTUwLDIxNTEsMjE1MiwyMTU2LDMwOTAsNjc5OCw2Nzk5LDY4MDAsNjgwMSw2ODAyLD
+I/flutter (17663): ║ Y4MzcsNjgzOCw3MTM5LDczMDcsNzYzMCw3NjMxLDc2MzIsNzYzOCw3NjYyLDkwNjYsOTEzMiIsInBvc2l0aW9uSWQi
+I/flutter (17663): ║ OiIxNiIsImVtcGxveWVlQ29tcGFueUlkIjoiNiIsInBhZ2VzQ2hlY2tzdW0iOiIyODIwNTQ4NTMiLCJtb2R1bGVQYW
+I/flutter (17663): ║ dlc0NoZWNrc3VtIjoiLTE5NDUyMjQ4NDEiLCJ0YWJzQ2hlY2tzdW0iOiIzMzM0NTExNTMiLCJmb3JjZVBhc3N3b3Jk
+I/flutter (17663): ║ Q2hhbmdlIjoiZmFsc2UiLCJpc0VuYWJsZWQiOiJ0cnVlIiwicGFzc3dvcmRWZXJzaW9uIjoiMSIsInN1YnNjcmliZX
+I/flutter (17663): ║ JFbmFibGVkIjoidHJ1ZSIsImNvbXBhbnlFbmFibGVkIjoidHJ1ZSIsInNpZCI6ImM4ZWJmMTBmMzBmZTQ3NDU5M2Iw
+I/flutter (17663): ║ Zjk3OGIxODdiYjM1Iiwic2Vzc2lvblN0YXJ0ZWRBdCI6IjE3OTM3MDMxNDMiLCJuYmYiOjE3OTM3ODQ0MzMsImV4cC
+I/flutter (17663): ║ I6MTc5NDM4OTIzMywiaWF0IjoxNzkzNzg0NDMzLCJpc3MiOiJUYWxlbnRMaW5rMzYwIiwiYXVkIjoiVGFsZW50TGlu
+I/flutter (17663): ║ azM2MCJ9.pOrEjQ51J1alSPHUByQMKZU90ilFHT2h31KOJ9Nn9kM8Ck7lpEbdJIivqImTzShymcA6GBqx7iB3-jDlL
+I/flutter (17663): ║ RwnHA
+I/flutter (17663): ╟ contentType: application/json
+I/flutter (17663): ╟ responseType: ResponseType.json
+I/flutter (17663): ╟ followRedirects: true
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Body
+I/flutter (17663): ╟ userId: 205
+I/flutter (17663): ╟ subscriberId: 1
+I/flutter (17663): ╟ companyId: 6
+I/flutter (17663): ╟ langId: ar
+I/flutter (17663): ╟ deviceTypeCode: 2
+I/flutter (17663): ╟ deviceToken:
+I/flutter (17663): ║ d_cD23q8QUe4fIep8OgWk9:APA91bHlpuZuRBPqnTt59Q9iOUYJ8LtASbm56XyIbVuozdtVKcbSQxr4mGm3sjXs6HS
+I/flutter (17663): ║ r-vHj0BbXIRR2rR8yhlQdUWLvNLSG5a5A8saV-jnMX0eENkPNIHg
+I/flutter (17663): ╟ deviceSerial: TP1A.220905.001
+I/flutter (17663): ╟ appVersion: 1.3.14
+I/flutter (17663): ╟ oSVersion: 13
+I/flutter (17663): ╟ data:
+I/flutter (17663): ║ {typeId: null, statusId: null, fromDateTime: 2026-11-04T00:00:00, endDateTime: 2026-11-04T
+I/flutter (17663): ║ 23:00:00, employeeId: [], companyId: [], categoryId: [], priorityId: [], onlyMe: true, exe
+I/flutter (17663): ║ cutionTypeId: null}
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ║ {userId: 205, subscriberId: 1, companyId: 6, langId: ar, deviceTypeCode: 2, deviceToken: d
+I/flutter (17663): ║ _cD23q8QUe4fIep8OgWk9:APA91bHlpuZuRBPqnTt59Q9iOUYJ8LtASbm56XyIbVuozdtVKcbSQxr4mGm3sjXs6HSr
+I/flutter (17663): ║ -vHj0BbXIRR2rR8yhlQdUWLvNLSG5a5A8saV-jnMX0eENkPNIHg, deviceSerial: TP1A.220905.001, appVer
+I/flutter (17663): ║ sion: 1.3.14, oSVersion: 13, data: {typeId: null, statusId: null, fromDateTime: 2026-11-04
+I/flutter (17663): ║ T00:00:00, endDateTime: 2026-11-04T23:00:00, employeeId: [], companyId: [], categoryId: []
+I/flutter (17663): ║ , priorityId: [], onlyMe: true, executionTypeId: null}}
+I/flutter (17663):
+I/flutter (17663): ╔╣ Response ║ POST ║ Status: 200 OK  ║ Time: 455 ms
+I/flutter (17663): ║  https://test.talentlink360.com/Developmnet/TalentLink_Dev/TalentLink_Dev_API/api/v2/Mobile/VisitAndTask/GetTaskAndVisitDashboard
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Headers
+I/flutter (17663): ╟ x-powered-by: [ASP.NET]
+I/flutter (17663): ╟ date: [Wed, 04 Nov 2026 09:27:40 GMT]
+I/flutter (17663): ╟ permissions-policy: [camera=(), microphone=(), geolocation=(), payment=()]
+I/flutter (17663): ╟ strict-transport-security: [max-age=31536000; includeSubDomains]
+I/flutter (17663): ╟ content-length: [505]
+I/flutter (17663): ╟ referrer-policy: [no-referrer]
+[log] ChuckerFlutter: POST:Mobile/VisitAndTask/GetTaskAndVisitDashboard - 200 saved.
+I/flutter (17663): ╟ content-type: [application/json; charset=utf-8]
+I/flutter (17663): ╟ x-frame-options: [DENY]
+I/flutter (17663): ╟ x-xss-protection: [0]
+I/flutter (17663): ╟ x-content-type-options: [nosniff]
+I/flutter (17663): ╟ content-security-policy: [default-src 'none'; frame-ancestors 'none']
+I/flutter (17663): ╟ server: [Microsoft-IIS/10.0]
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Body
+I/flutter (17663): ║
+I/flutter (17663): ║    {
+I/flutter (17663): ║         "version": "1.0.0",
+I/flutter (17663): ║         "statusCode": 200,
+I/flutter (17663): ║         "requestId": "013635ab-0f0e-46e8-bd8e-27b2a0109042",
+I/flutter (17663): ║         "error": []
+I/flutter (17663): ║         "result": {
+I/flutter (17663): ║             "taskCount": 0,
+I/flutter (17663): ║             "visitCount": 1,
+I/flutter (17663): ║             "taskStatusList": []
+I/flutter (17663): ║             "visitStatusList": [{name: قيد الانتظار, count: 1, color: #0096FF}]
+I/flutter (17663): ║             "taskSummary": {totalTasksToday: 0, totalTasksCurrent: 0, totalTasksPrevious: 0},
+I/flutter (17663): ║             "visitSummary": {totalVisitsToday: 1, totalVisitsCurrent: 1, totalVisitsPrevious: 0},
+I/flutter (17663): ║             "tasksLate": 0,
+I/flutter (17663): ║             "visitsLate": 0
+I/flutter (17663): ║        }
+I/flutter (17663): ║         "success": true,
+I/flutter (17663): ║         "responseMessage": "تم بنجاح",
+I/flutter (17663): ║         "privileges": null
+I/flutter (17663): ║    }
+I/flutter (17663): ║
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663):
+I/flutter (17663): ╔╣ Response ║ POST ║ Status: 200 OK  ║ Time: 564 ms
+I/flutter (17663): ║  https://test.talentlink360.com/Developmnet/TalentLink_Dev/TalentLink_Dev_API/api/v2/Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Headers
+I/flutter (17663): ╟ x-powered-by: [ASP.NET]
+I/flutter (17663): ╟ date: [Wed, 04 Nov 2026 09:27:40 GMT]
+I/flutter (17663): ╟ permissions-policy: [camera=(), microphone=(), geolocation=(), payment=()]
+I/flutter (17663): ╟ strict-transport-security: [max-age=31536000; includeSubDomains]
+I/flutter (17663): ╟ content-length: [2013]
+[log] ChuckerFlutter: POST:Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser - 200 saved.
+I/flutter (17663): ╟ referrer-policy: [no-referrer]
+I/flutter (17663): ╟ content-type: [application/json; charset=utf-8]
+I/flutter (17663): ╟ x-frame-options: [DENY]
+I/flutter (17663): ╟ x-xss-protection: [0]
+I/flutter (17663): ╟ x-content-type-options: [nosniff]
+I/flutter (17663): ╟ content-security-policy: [default-src 'none'; frame-ancestors 'none']
+I/flutter (17663): ╟ server: [Microsoft-IIS/10.0]
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): ╔ Body
+I/flutter (17663): ║
+I/flutter (17663): ║    {
+I/flutter (17663): ║         "version": "1.0.0",
+I/flutter (17663): ║         "statusCode": 200,
+I/flutter (17663): ║         "requestId": "59d2dbe7-258f-4c1f-ba59-70da82a2c138",
+I/flutter (17663): ║         "error": []
+I/flutter (17663): ║         "result": {
+I/flutter (17663): ║             "totalCount": 1,
+I/flutter (17663): ║             "items": [
+I/flutter (17663): ║                {
+I/flutter (17663): ║                     "priorityName": "متوسط",
+I/flutter (17663): ║                     "assignByName": "final  test    co",
+I/flutter (17663): ║                     "onlyMe": false,
+I/flutter (17663): ║                     "fromDateTime": "2026-11-04T11:05:00",
+I/flutter (17663): ║                     "endDateTime": "2026-11-04T11:05:00",
+I/flutter (17663): ║                     "masterData": {
+I/flutter (17663): ║                         "id": 2805,
+I/flutter (17663): ║                         "companyName": "حلول جالاكسي الذكية",
+I/flutter (17663): ║                         "companyId": 6,
+I/flutter (17663): ║                         "typeId": 2,
+I/flutter (17663): ║                         "typeName": "زيارة",
+I/flutter (17663): ║                         "title": "bbbbb",
+I/flutter (17663): ║                         "description": "",
+I/flutter (17663): ║                         "taskExecutiontypeId": 1,
+I/flutter (17663): ║                         "taskExecutiontypeName": "مرة واحدة",
+I/flutter (17663): ║                         "visitCategoryId": 2,
+I/flutter (17663): ║                         "visitCategoryName": "Category B",
+I/flutter (17663): ║                         "fromDate": "11/4/2026",
+I/flutter (17663): ║                         "toDate": null,
+I/flutter (17663): ║                         "fromTime": "08:05:00",
+I/flutter (17663): ║                         "toTime": "08:05:00",
+I/flutter (17663): ║                         "addressText": "",
+I/flutter (17663): ║                         "longtitude": "-122.41940002888441",
+I/flutter (17663): ║                         "latitude": "37.774899896586966",
+I/flutter (17663): ║                         "status": {id: 1, statusCode: 1, name: قيد الانتظار, color: #0096FF},
+I/flutter (17663): ║                         "statusName": "قيد الانتظار",
+I/flutter (17663): ║                         "companyContactId": 0,
+I/flutter (17663): ║                         "companyContactName": null,
+I/flutter (17663): ║                         "assignedTo": [
+I/flutter (17663): ║                            {
+I/flutter (17663): ║                                 "assinToId": 317,
+I/flutter (17663): ║                                 "assinToName": "final  test ",
+I/flutter (17663): ║                                 "assinById": 205,
+I/flutter (17663): ║                                 "assinByName": "final  test    co",
+I/flutter (17663): ║                                 "canEdit": true
+I/flutter (17663): ║                            }
+I/flutter (17663): ║                         ],
+I/flutter (17663): ║                         "weeklyDays": []
+I/flutter (17663): ║                         "monthlyDays": []
+I/flutter (17663): ║                         "createdAt": "2026-11-04T11:03:37.9514612",
+I/flutter (17663): ║                         "isEnabled": true,
+I/flutter (17663): ║                         "createdAtTime": null,
+I/flutter (17663): ║                         "createdByName": "final  test    co",
+I/flutter (17663): ║                         "createdBy": 205,
+I/flutter (17663): ║                         "assignedToNames": "final  test ",
+I/flutter (17663): ║                         "priorityId": 2,
+I/flutter (17663): ║                         "priorityName": "متوسط",
+I/flutter (17663): ║                         "onlyMe": false,
+I/flutter (17663): ║                         "fromDateTime": "2026-11-04T11:05:00",
+I/flutter (17663): ║                         "endDateTime": "2026-11-04T11:05:00"
+I/flutter (17663): ║                    }
+I/flutter (17663): ║                     "masterId": 2805,
+I/flutter (17663): ║                     "masterName": "bbbbb",
+I/flutter (17663): ║                     "detailsid": 4183,
+I/flutter (17663): ║                     "userId": 317,
+I/flutter (17663): ║                     "userName": "final  test ",
+I/flutter (17663): ║                     "dateStr": "11/4/2026",
+I/flutter (17663): ║                     "date": "2026-11-04T00:00:00",
+I/flutter (17663): ║                     "fromTime": "11:05:00",
+I/flutter (17663): ║                     "toTime": "11:05:00",
+I/flutter (17663): ║                     "actionId": 0,
+I/flutter (17663): ║                     "actionName": "",
+I/flutter (17663): ║                     "status": {id: 1, statusCode: null, name: قيد الانتظار, color: #0096FF},
+I/flutter (17663): ║                     "statusReason": "",
+I/flutter (17663): ║                     "typeId": 2,
+I/flutter (17663): ║                     "typeName": "زيارة",
+I/flutter (17663): ║                     "taskExecutionId": 1,
+I/flutter (17663): ║                     "taskExecutionName": "مرة واحدة",
+I/flutter (17663): ║                     "addressTest": "",
+I/flutter (17663): ║                     "longtitude": "-122.41940002888441",
+I/flutter (17663): ║                     "latitude": "37.774899896586966",
+I/flutter (17663): ║                     "createdAt": "2026-11-04T11:03:37.9533961",
+I/flutter (17663): ║                     "createdAtStr": "11/4/2026",
+I/flutter (17663): ║                     "isEnabled": true
+I/flutter (17663): ║                }
+I/flutter (17663): ║             ]
+I/flutter (17663): ║        }
+I/flutter (17663): ║         "success": true,
+I/flutter (17663): ║         "responseMessage": "تم بنجاح",
+I/flutter (17663): ║         "privileges": null
+I/flutter (17663): ║    }
+I/flutter (17663): ║
+I/flutter (17663): ╚══════════════════════════════════════════════════════════════════════════════════════════╝
+I/flutter (17663): startDateTime__: 2026-11-04T11:05:00

@@ -1,0 +1,83 @@
+{
+  "message": "how many pending visits do i have today",
+  "auth": {
+    "baseUrl": "https://test.talentlink360.com/Developmnet/TalentLink_Dev/TalentLink_Dev_API/api/v2/",
+    "token": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyMDUiLCJuYW1lIjoiZmluYWwgIHRlc3QgICAgY28iLCJzdWJzY3JpYmVySWQiOiIxIiwic2VsZWN0ZWRDb21wYW55SWQiOiI2IiwiZW1wbG95ZWVJZCI6IjMxNyIsInJvbGVBY2Nlc3NJZCI6IjEsMiwzLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDE5LDIwLDIxLDIyLDIzLDI0LDI1LDI2LDI3LDI4LDI5LDMwLDMxLDMyLDMzLDM0LDM1LDM2LDM3LDM4LDM5LDQwLDQxLDQyLDQzLDQ0LDQ1LDQ2LDQ3LDQ4LDQ5LDUwLDUxLDUyLDUzLDU0LDU1LDU2LDU3LDU4LDU5LDYwLDYxLDYyLDYzLDY0LDY1LDY2LDY3LDY4LDY5LDcwLDcxLDcyLDczLDc0LDc1LDc2LDc3LDc4LDc5LDgwLDgxLDgyLDgzLDg0LDg1LDg2LDg3LDg4LDg5LDkwLDkxLDkyLDkzLDk0LDk1LDk2LDk3LDk4LDk5LDEwMCwxMDEsMTAyLDEwMywxMDQsMTA1LDEwNiwxMDcsMTA4LDEwOSwxMTAsMTExLDExMiwxMTMsMTE0LDExNSwxMTYsMTE3LDExOCwxMTksMTIwLDEyMSwxMjIsMTIzLDEyNCwxMjUsMTI2LDEyNywxMjgsMTI5LDEzMCwxMzEsMTMyLDEzMywxMzQsMTM1LDEzNiwyNjAsMjYzLDI2NCwyNjUsMjY2LDI3MiwyNzMsMjc0LDI3OCwyODAsMjgxLDI4MiwyODUsMjg2LDI4Nyw3NjcsNzY4LDg5MCw4OTEsODkyLDg5Myw5MDAsOTAyLDEwMjgsMTA0MiwxMDQzLDEwNDcsMTA1MCwxMDUxLDEwNTQsMTA1NSwxMDU2LDEwNzQsMTA3OCwxMDc5LDEwODAsMTEwNSwxMTA2LDIxMDgsMjEwOSwyMTEwLDIxMTEsMjExMiwyMTEzLDIxMjEsMjEzMCwyMTM1LDIxMzYsMjE0MSwyMTQ0LDIxNDYsMjE0NywyMTUwLDIxNTEsMjE1MiwyMTU2LDMwOTAsNjc5OCw2Nzk5LDY4MDAsNjgwMSw2ODAyLDY4MzcsNjgzOCw3MTM5LDczMDcsNzYzMCw3NjMxLDc2MzIsNzYzOCw3NjYyLDkwNjYsOTEzMiIsInBvc2l0aW9uSWQiOiIxNiIsImVtcGxveWVlQ29tcGFueUlkIjoiNiIsInBhZ2VzQ2hlY2tzdW0iOiIyODIwNTQ4NTMiLCJtb2R1bGVQYWdlc0NoZWNrc3VtIjoiLTE5NDUyMjQ4NDEiLCJ0YWJzQ2hlY2tzdW0iOiIzMzM0NTExNTMiLCJmb3JjZVBhc3N3b3JkQ2hhbmdlIjoiZmFsc2UiLCJpc0VuYWJsZWQiOiJ0cnVlIiwicGFzc3dvcmRWZXJzaW9uIjoiMSIsInN1YnNjcmliZXJFbmFibGVkIjoidHJ1ZSIsImNvbXBhbnlFbmFibGVkIjoidHJ1ZSIsInNpZCI6ImM4ZWJmMTBmMzBmZTQ3NDU5M2IwZjk3OGIxODdiYjM1Iiwic2Vzc2lvblN0YXJ0ZWRBdCI6IjE3OTM3MDMxNDMiLCJuYmYiOjE3OTM3ODQ0MzMsImV4cCI6MTc5NDM4OTIzMywiaWF0IjoxNzkzNzg0NDMzLCJpc3MiOiJUYWxlbnRMaW5rMzYwIiwiYXVkIjoiVGFsZW50TGluazM2MCJ9.pOrEjQ51J1alSPHUByQMKZU90ilFHT2h31KOJ9Nn9kM8Ck7lpEbdJIivqImTzShymcA6GBqx7iB3-jDlLRwnHA"
+  },
+  "session": {
+    "userId": 205,
+    "subscriberId": 1,
+    "companyId": 6,
+    "employeeId": 317,
+    "langId": "en",
+    "deviceTypeCode": 2,
+    "deviceToken": "d_cD23q8QUe4fIep8OgWk9:APA91bHlpuZuRBPqnTt59Q9iOUYJ8LtASbm56XyIbVuozdtVKcbSQxr4mGm3sjXs6HSr-vHj0BbXIRR2rR8yhlQdUWLvNLSG5a5A8saV-jnMX0eENkPNIHg",
+    "deviceSerial": "TP1A.220905.001",
+    "appVersion": "1.3.14",
+    "oSVersion": "13"
+  },
+  "lookups": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "الفئة أ"
+      },
+      {
+        "id": 2,
+        "name": "Category B"
+      },
+      {
+        "id": 3,
+        "name": "Category C"
+      },
+      {
+        "id": 31,
+        "name": "Category D"
+      },
+      {
+        "id": 44,
+        "name": "Mostafa Test"
+      }
+    ],
+    "priorities": [
+      {
+        "id": 1,
+        "name": "Low"
+      },
+      {
+        "id": 2,
+        "name": "Medium"
+      },
+      {
+        "id": 3,
+        "name": "High"
+      }
+    ],
+    "statuses": [
+      {
+        "id": 1,
+        "name": "Pending"
+      },
+      {
+        "id": 2,
+        "name": "In Progress"
+      },
+      {
+        "id": 3,
+        "name": "Cancelled"
+      },
+      {
+        "id": 4,
+        "name": "Finished"
+      },
+      {
+        "id": 5,
+        "name": "Rejected"
+      },
+      {
+        "id": 7,
+        "name": "Partially Completed"
+      }
+    ]
+  }
+}

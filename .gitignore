@@ -15,5 +15,3 @@ __pycache__/
 models/*/model*.safetensors
 *.log
 
-# Local test input with a real login token
-my_request.json
