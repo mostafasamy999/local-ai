@@ -1,0 +1,343 @@
+# Task: Build a Local AI HR Assistant — Activities Module
+
+Act as a Senior AI/ML Engineer and Backend AI Architect.
+
+Your task is to inspect my existing Activities module specifications and build a complete local AI assistant using Qwen 2.5 3B Instruct 4-bit.
+
+The final goal is to train and export a model that can later be integrated into our production HR backend.
+
+## 1. Existing Specifications
+
+Read and analyze all relevant files inside:
+
+`/Users/mostafasamy/work/specs-talentlink/specs/001-activities`
+
+Important:
+- Read every relevant specification before implementation.
+- Understand the business requirements, API contracts, scenarios, validation rules, and edge cases.
+- Do not assume API behavior that is not documented.
+- Do not modify the original specification files.
+- Identify missing information and document open questions.
+- Use the existing specifications as the single source of truth.
+
+## 2. Base Model
+
+Use:
+
+`mlx-community/Qwen2.5-3B-Instruct-4bit`
+
+Model location:
+
+`~/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/`
+
+The model is already downloaded on my Mac.
+
+Requirements:
+- Use MLX and MLX-LM for Apple Silicon.
+- Reuse the existing model cache.
+- Do not download another model unnecessarily.
+- Keep the base model unchanged.
+- Save trained adapters and exported artifacts inside the project.
+- Document the exact training and inference commands.
+
+Do not assume that adapter training produces a standalone model. Provide a tested model export/merge process suitable for later production inference.
+
+## 3. Required Project Structure
+
+Respect this exact top-level structure. You may add subdirectories and supporting files when necessary, but do not remove or rename these directories or required files.
+
+```text
+hr-local-ai/
+│
+├── config/
+│   ├── model_config.yaml
+│   └── system_prompt.txt
+│
+├── knowledge/
+│   ├── company_info.md
+│   ├── hr_policies.md
+│   ├── attendance_rules.md
+│   └── leave_rules.md
+│
+├── api/
+│   ├── api_contracts.yaml
+│   ├── endpoints.json
+│   └── response_schemas.json
+│
+├── agent/
+│   ├── intent_definitions.json
+│   ├── action_definitions.json
+│   └── conversation_rules.md
+│
+├── training/
+│   ├── intent_dataset.jsonl
+│   ├── tool_call_dataset.jsonl
+│   └── response_examples.jsonl
+│
+├── evaluation/
+│   ├── test_questions.jsonl
+│   └── expected_results.jsonl
+│
+└── README.md
+```
+
+## 4. AI Architecture
+
+Implement the following separation:
+
+### A. Local LLM — Qwen
+
+Responsible for:
+- Understanding natural language.
+- Identifying user intent.
+- Extracting required parameters.
+- Generating structured JSON.
+- Understanding Arabic and English questions.
+
+### B. AI Agent
+
+Responsible for:
+- Receiving the user's question.
+- Sending it to Qwen.
+- Validating the generated intent and arguments.
+- Identifying the required action.
+- Detecting missing parameters.
+- Maintaining conversation context.
+- Returning a structured action request.
+
+The agent must not invent API results.
+
+### C. API Integration Layer
+
+Implement a separate API execution layer.
+
+For the initial local development environment:
+- Use mock API responses or a clearly isolated test API adapter.
+- Never invent production endpoints or request fields.
+- Follow the documented API contracts.
+- Keep employee authentication and authorization outside the LLM.
+- Validate employee identity and permissions before executing actions.
+
+### D. Response Generator
+
+Responsible for:
+- Receiving the API result.
+- Generating natural Arabic or English responses.
+- Formatting dates, times, and numbers correctly.
+- Handling empty results and API failures.
+- Maintaining a friendly conversational style.
+
+## 5. Activities Module Understanding
+
+Extract the actual supported capabilities from the specifications.
+
+For every supported capability, document:
+
+1. Intent name.
+2. Description.
+3. Example Arabic questions.
+4. Example English questions.
+5. Required arguments.
+6. Optional arguments.
+7. Parameter types and validation.
+8. Related backend action/API.
+9. Expected API response.
+10. Missing-information scenarios.
+
+Do not create unsupported capabilities simply because they are common in HR systems.
+
+Build the intent and action definitions from the documented Activities requirements.
+
+## 6. Training Dataset
+
+Create high-quality datasets based on the specifications.
+
+Required files:
+
+### training/intent_dataset.jsonl
+
+Examples mapping natural-language questions to their intent.
+
+### training/tool_call_dataset.jsonl
+
+Examples mapping questions to structured actions and arguments.
+
+### training/response_examples.jsonl
+
+Examples of generating natural responses from supplied API results.
+
+Dataset requirements:
+- Support Arabic and English.
+- Include different question formulations.
+- Include short and conversational questions.
+- Include ambiguous questions.
+- Include missing parameters.
+- Include follow-up questions.
+- Include invalid or unsupported requests.
+- Avoid duplicate and contradictory examples.
+- Do not use real employee personal information.
+- Do not fabricate business rules.
+
+Use valid JSONL: one JSON object per line.
+
+Document the dataset schema and how to extend it.
+
+## 7. Conversation Management
+
+Support conversations such as:
+
+User: When did I start my activity yesterday?
+
+Assistant: You started your activity yesterday at 8:45 AM.
+
+User: What about the day before?
+
+Assistant: You started your activity on November 9 at 9:00 AM.
+
+The second question should reuse the previous intent while changing the date.
+
+Also support clarification:
+
+User: Show my activities.
+
+Assistant: Which period would you like to check?
+
+The conversation manager must preserve relevant context without incorrectly carrying old parameters into unrelated questions.
+
+## 8. Fine-Tuning
+
+Implement a reproducible MLX-LM fine-tuning pipeline.
+
+Requirements:
+- Inspect the installed MLX and MLX-LM versions first.
+- Verify compatibility with the selected Qwen model.
+- Use LoRA or another supported parameter-efficient fine-tuning method.
+- Keep the base model unchanged.
+- Use configurable training parameters.
+- Split training and validation datasets.
+- Save training logs and checkpoints.
+- Make the training process reproducible.
+- Avoid data leakage between training and evaluation datasets.
+
+Provide scripts for:
+- Preparing datasets.
+- Validating JSONL.
+- Training.
+- Evaluating.
+- Exporting or merging adapters.
+- Running local inference.
+
+Do not claim training succeeded unless the actual training and inference tests pass.
+
+## 9. Evaluation
+
+Build an evaluation suite covering:
+
+- Intent classification accuracy.
+- Argument extraction accuracy.
+- Correct action selection.
+- Arabic question understanding.
+- English question understanding.
+- Missing parameter detection.
+- Follow-up conversation handling.
+- Invalid JSON generation.
+- Unsupported request handling.
+- Hallucination prevention.
+
+Include at least 50 meaningful test cases, derived from the actual specifications.
+
+Report measurable results, including:
+- Overall accuracy.
+- Intent accuracy.
+- Argument accuracy.
+- Action selection accuracy.
+- Invalid output rate.
+
+Do not report fabricated evaluation metrics.
+
+## 10. Production Readiness
+
+The final model will be integrated into our HR backend.
+
+Design the system so that the production backend can eventually:
+
+1. Receive a user question.
+2. Pass it to the local or deployed model.
+3. Receive a structured action request.
+4. Validate the authenticated employee.
+5. Execute the appropriate HR API.
+6. Pass the API response to the response generator.
+7. Return the final answer.
+
+Define a stable JSON request/response contract.
+
+Keep model inference independent from the local training environment.
+
+Do not assume MLX is suitable for the production server. MLX is for the current Apple Silicon development environment; investigate an appropriate production inference runtime and validate model conversion compatibility before recommending a deployment format.
+
+Do not include employee credentials, API tokens, or private employee information in training data.
+
+## 11. Documentation
+
+Update README.md with:
+
+- Architecture overview.
+- Project structure.
+- Prerequisites.
+- Environment setup.
+- Model location and caching behavior.
+- Dataset formats.
+- Training instructions.
+- Evaluation instructions.
+- Local inference instructions.
+- Export instructions.
+- Production integration contract.
+- Known limitations.
+- Troubleshooting.
+
+Every command must be tested where possible.
+
+## 12. Implementation Rules
+
+- First inspect the repository and specifications.
+- Then prepare a short implementation plan.
+- Implement incrementally.
+- Do not overwrite existing working files without inspecting them.
+- Do not modify the original specifications.
+- Do not introduce unnecessary frameworks.
+- Separate training, inference, agent orchestration, and API execution.
+- Use type-safe and validated data structures.
+- Keep configuration outside source code.
+- Do not commit changes automatically.
+- Run tests after each implementation stage.
+- Report all assumptions and unresolved questions.
+
+## 13. Final Deliverables
+
+I expect:
+
+1. A complete project following the required structure.
+2. A specification-derived knowledge base.
+3. Intent and action definitions.
+4. Arabic and English datasets.
+5. A working local Qwen inference pipeline.
+6. A reproducible fine-tuning pipeline.
+7. An evaluation suite with actual results.
+8. A tested model export process.
+9. A production integration contract.
+10. Clear setup and usage documentation.
+
+## Execution Strategy
+
+Start by reading all Activities specifications and inspecting the existing local AI project.
+
+Before writing code, provide:
+- A summary of the Activities module capabilities.
+- The list of supported intents and actions.
+- The proposed training data format.
+- The implementation plan.
+- Any blockers or missing API information.
+
+Then proceed with implementation without making unsupported assumptions.
+
+The priority is a reliable, testable HR assistant, not simply producing a fine-tuned model file.
