@@ -1,45 +1,14 @@
-ok now i has spect of acitivity module at /Users/mostafasamy/work/specs-talentlink/specs/001-activities
-now i need promppt to send to my  agent to read it and then build this project to make ai model
-and after train i will send it into packend to run at production
-The Qwen base model: where it’s downloaded
-Name	mlx-community/Qwen2.5-3B-Instruct-4bit (set in scripts/train.sh and the other scripts)
-Where it’s saved	~/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/
-Size	1.6 GB
-Main files	model.safetensors (the weights), tokenizer.json, config.json
-It’s downloaded automatically from Hugging Face the first time any script runs. That’s the Fetching 9 files line you saw. It’s not in your project or in git, so a new Mac downloads it again by itself.
 
+[chat] 192.168.100.33 3.6s 'ايه التاسكات اللي عندي النهار ده' -> get_tasks
+[chat] 192.168.100.33 3.1s 'ما هي اسم التاسكات اللي عندي بكرا' -> get_tasks
+[chat] 192.168.100.33 2.8s 'طب النهار ده' -> get_tasks
+[chat] 192.168.100.33 4.9s 'مش فاهم' -> get_dashboard
+[chat] 192.168.100.33 5.6s 'كام تاسك عندي النهارده' -> get_tasks
+[chat] 192.168.100.33 2.6s 'ايه هم' -> get_dashboard
+[chat] 192.168.100.33 2.8s 'اسمائهم ايه' -> get_visits
+[chat] 192.168.100.33 2.8s 'ايه عناوينهم' -> get_tasks
+[chat] 192.168.100.33 2.8s 'التاسكات اللي عندي اليوم' -> get_tasks
+[chat] 192.168.100.33 2.8s 'ايه اسمائهم' -> get_tasks
+[chat] 192.168.100.33 2.8s 'مين اللي حطهملي' -> get_tasks
 
-u should respect this structure
-
-hr-local-ai/
-│
-├── config/
-│   ├── model_config.yaml
-│   └── system_prompt.txt
-│
-├── knowledge/
-│   ├── company_info.md
-│   ├── hr_policies.md
-│   ├── attendance_rules.md
-│   └── leave_rules.md
-│
-├── api/
-│   ├── api_contracts.yaml
-│   ├── endpoints.json
-│   └── response_schemas.json
-│
-├── agent/
-│   ├── intent_definitions.json
-│   ├── action_definitions.json
-│   └── conversation_rules.md
-│
-├── training/
-│   ├── intent_dataset.jsonl
-│   ├── tool_call_dataset.jsonl
-│   └── response_examples.jsonl
-│
-├── evaluation/
-│   ├── test_questions.jsonl
-│   └── expected_results.jsonl
-│
-└── README.md
+this detail not aswerd corectly ?????

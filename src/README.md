@@ -74,6 +74,18 @@ backend error. Questions can also be piped in, one per line:
 printf 'show my pending visits today\nand yesterday?\n' | ../.venv/bin/python scripts/chat.py --debug
 ```
 
+## Run as an API (for the Flutter app on the same Wi-Fi)
+
+```bash
+../.venv/bin/python scripts/api_server.py --adapter adapters/v1     # http://0.0.0.0:8090
+```
+
+- `POST /chat` `{"message": "...", "session_id": "optional"}` → the model JSON (`action`, `arguments`, …) plus
+  `answer` (sentence from **mock** data), `request` (endpoint + filters) and `lang`.
+- `POST /reset` `{"session_id": "..."}` clears a conversation. `GET /health` checks the server.
+- Follow-ups are remembered per `session_id` (or per client IP when none is sent).
+- The app's `ActivitiesChatApiService.defaultBaseUrl` must be `http://<Mac IP>:8090` (`ipconfig getifaddr en0`).
+
 ## Test
 
 ```bash
