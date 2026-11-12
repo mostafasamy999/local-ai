@@ -12,6 +12,6 @@ __pycache__/
 .idea/workspace.xml
 
 # Large model weights (exceed GitHub's 100MB limit)
-models/*/model*.safetensors
+src/models/*/model*.safetensors
 *.log
 
