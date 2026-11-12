@@ -1,0 +1,29 @@
+# Model settings for the Activities assistant.
+# The base model is loaded from the local Hugging Face cache (HF_HUB_OFFLINE=1).
+model:
+  name: mlx-community/Qwen2.5-3B-Instruct-4bit
+  adapter_path: null        # set to a LoRA adapter folder after fine-tuning is approved
+  max_tokens: 256
+  temperature: 0.0          # greedy decoding: the same question always gives the same JSON
+  system_prompt_file: config/system_prompt.txt
+
+agent:
+  retries_on_invalid: 1     # app/agent.py retries the model once when the JSON is invalid
+  history_turns: 1          # how many previous user/assistant pairs are sent with a follow-up
+
+# LoRA settings for a future fine-tuning run (NOT used yet: training is not approved).
+lora:
+  fine_tune_type: lora
+  num_layers: 8
+  rank: 8
+  scale: 20.0
+  dropout: 0.0
+  iters: 600
+  batch_size: 4
+  learning_rate: 1.0e-5
+  mask_prompt: true
+  steps_per_report: 20
+  steps_per_eval: 100
+  save_every: 100
+  max_seq_length: 2048
+  train_data: training/tool_call_dataset.jsonl

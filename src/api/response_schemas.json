@@ -1,0 +1,68 @@
+{
+  "source": "api-contracts.md §2, §6 and current-state-codebase-logic-tech.md §4.1, §4.2, §4.5",
+  "note": "Field names marked unconfirmed are what app/mock_api.py uses until the backend confirms them.",
+  "envelope": {
+    "success": "bool",
+    "statusCode": "int (200 on success)",
+    "responseMessage": "string",
+    "data": "the result; the field name is unconfirmed (no Q)"
+  },
+  "GetTaskAndVisitDashboard": {
+    "taskCount": "int",
+    "visitCount": "int",
+    "taskStatusList": [{"statusId": "int - field name unconfirmed (Q20)", "count": "int - field name unconfirmed (Q20)"}],
+    "visitStatusList": [{"statusId": "int - field name unconfirmed (Q20)", "count": "int - field name unconfirmed (Q20)"}],
+    "tasksLate": "int",
+    "visitsLate": "int",
+    "taskSummary": {
+      "totalTasksToday": "int - exact name unconfirmed (no Q)",
+      "totalTasksCurrent": "int - exact name unconfirmed (no Q)",
+      "totalTasksPrevious": "int - exact name unconfirmed (no Q)"
+    }
+  },
+  "GetVisitAndTaskAssignedToLoggedInUser": {
+    "totalCount": "int",
+    "items": [
+      {
+        "detailsId": "int (occurrence id)",
+        "masterId": "int",
+        "typeId": "int (1 task, 2 visit)",
+        "masterName": "string",
+        "status": {"id": "int", "name": "string", "color": "string"},
+        "priorityId": "int",
+        "priorityName": "string",
+        "onlyMe": "bool",
+        "userId": "int",
+        "userName": "string",
+        "assignByName": "string",
+        "createdAt": "string ISO",
+        "taskExecutionId": "int or null",
+        "taskExecutionName": "string or null",
+        "addressText": "string",
+        "masterData": {
+          "description": "string",
+          "visitCategoryId": "int",
+          "fromDateTime": "string ISO",
+          "endDateTime": "string ISO",
+          "onlyMe": "bool",
+          "companyId": "int"
+        }
+      }
+    ],
+    "items_field_name": "unconfirmed (no Q)"
+  },
+  "GetVisitAndTaskList": {
+    "shape": "unconfirmed (Q18): either {items or data, totalCount} or a plain list",
+    "item": {
+      "id": "int (master id)",
+      "typeId": "int (1 task, 2 visit)",
+      "name": "string - field name unconfirmed (no Q)",
+      "status": {"id": "int", "name": "string", "color": "string"},
+      "priorityId": "int",
+      "priorityName": "string",
+      "onlyMe": "bool",
+      "startDateTime": "string ISO",
+      "endDateTime": "string ISO"
+    }
+  }
+}

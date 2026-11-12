@@ -1,0 +1,42 @@
+{
+  "source": "specs/001-activities/api-contracts.md §2, §4, §5",
+  "values": {
+    "typeId": {"type": "int", "allowed": {"1": "Task", "2": "Visit"}},
+    "statusId": {"type": "int", "allowed": {"1": "Pending", "2": "In progress", "3": "Cancelled", "4": "Completed", "5": "Rejected", "7": "Partially completed"}},
+    "priorityId": {"type": "int", "allowed": {"1": "low", "2": "medium", "3": "high"}},
+    "scope": {"type": "string", "allowed": ["all", "my_team", "my_activities", "private"], "default_when_null": "all"},
+    "dateRange": {"type": "string", "allowed": ["today", "yesterday", "last_7_days", "this_week", "last_week", "this_month", "current", "previous"], "default_when_null": "last_7_days", "excludes": ["fromDate", "toDate"]},
+    "fromDate": {"type": "string", "format": "yyyy-MM-dd"},
+    "toDate": {"type": "string", "format": "yyyy-MM-dd", "rule": "not before fromDate"},
+    "search": {"type": "string", "rule": "free text, sent as searchValue"}
+  },
+  "actions": {
+    "get_visits": {
+      "endpoint": "Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser",
+      "endpoint_id": "E2",
+      "fixed": {"typeId": 2},
+      "arguments": ["dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"]
+    },
+    "get_tasks": {
+      "endpoint": "Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser",
+      "endpoint_id": "E2",
+      "fixed": {"typeId": 1, "categoryId": []},
+      "arguments": ["dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"]
+    },
+    "get_main_activities": {
+      "endpoint": "Mobile/VisitAndTask/GetVisitAndTaskList",
+      "endpoint_id": "E3",
+      "fixed": {"currentOrOld": 0, "categoryId": 0},
+      "arguments": ["typeId", "dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"],
+      "notes": "priorityId is sent as a list on E3. typeId null -> 0 (any). current/previous are ignored by Main (SC-11)."
+    },
+    "get_dashboard": {
+      "endpoint": "Mobile/VisitAndTask/GetTaskAndVisitDashboard",
+      "endpoint_id": "E1",
+      "fixed": {},
+      "arguments": ["dateRange", "fromDate", "toDate", "statusId", "scope"],
+      "notes": "E1 always counts both types and has no priority or search filter (Q26)."
+    }
+  },
+  "filled_by_code_not_model": ["fromDateTime", "endDateTime", "onlyMe", "companyId", "employeeId", "skip", "pageSize", "direction", "envelope (user, company, device, language)"]
+}

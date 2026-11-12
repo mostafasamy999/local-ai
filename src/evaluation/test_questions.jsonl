@@ -1,0 +1,74 @@
+{"id": "T001", "lang": "ar", "category": "clarify_follow_up", "messages": [{"role": "user", "content": "الملغاة"}, {"role": "assistant", "content": "{\"action\": null, \"arguments\": null, \"needs_clarification\": true, \"clarification_question\": \"ماذا تقصد: الزيارات أم المهام أم القائمة الرئيسية أم لوحة المتابعة؟\", \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "المهام طبعاً"}]}
+{"id": "T002", "lang": "ar", "category": "clarify_follow_up", "messages": [{"role": "user", "content": "الملغاة"}, {"role": "assistant", "content": "{\"action\": null, \"arguments\": null, \"needs_clarification\": true, \"clarification_question\": \"ماذا تقصد: الزيارات أم المهام أم القائمة الرئيسية أم لوحة المتابعة؟\", \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "أقصد الزيارات"}]}
+{"id": "T003", "lang": "en", "category": "clarify_follow_up", "messages": [{"role": "user", "content": "The cancelled ones"}, {"role": "assistant", "content": "{\"action\": null, \"arguments\": null, \"needs_clarification\": true, \"clarification_question\": \"Which one do you mean: visits, tasks, the main list or the dashboard?\", \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "I meant visits"}]}
+{"id": "T004", "lang": "en", "category": "clarify_follow_up", "messages": [{"role": "user", "content": "The cancelled ones"}, {"role": "assistant", "content": "{\"action\": null, \"arguments\": null, \"needs_clarification\": true, \"clarification_question\": \"Do you want your visits, your tasks, the main list or the dashboard?\", \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "The tasks one"}]}
+{"id": "T005", "lang": "ar", "category": "count_priority", "messages": [{"role": "user", "content": "ما عدد المهام ذات الأولوية العالية؟"}]}
+{"id": "T006", "lang": "ar", "category": "count_priority", "messages": [{"role": "user", "content": "ما عدد المهام ذات الأولوية المتوسطة؟"}]}
+{"id": "T007", "lang": "en", "category": "count_priority", "messages": [{"role": "user", "content": "What's the number of medium priority tasks?"}]}
+{"id": "T008", "lang": "en", "category": "count_priority", "messages": [{"role": "user", "content": "What's the number of medium-priority tasks?"}]}
+{"id": "T009", "lang": "ar", "category": "dashboard", "messages": [{"role": "user", "content": "إجمالي الزيارات والمهام للأنشطة المرفوضة؟"}]}
+{"id": "T010", "lang": "ar", "category": "dashboard", "messages": [{"role": "user", "content": "أرقام لوحة المتابعة هذا الأسبوع؟"}]}
+{"id": "T011", "lang": "ar", "category": "dashboard", "messages": [{"role": "user", "content": "أرقام لوحة المتابعة للأنشطة المرفوضة الخاصة بفريقي؟"}]}
+{"id": "T012", "lang": "en", "category": "dashboard", "messages": [{"role": "user", "content": "Dashboard numbers assigned only to me?"}]}
+{"id": "T013", "lang": "en", "category": "dashboard", "messages": [{"role": "user", "content": "Totals for my visits and tasks for the waiting ones?"}]}
+{"id": "T014", "lang": "en", "category": "dashboard", "messages": [{"role": "user", "content": "Dashboard numbers of my team?"}]}
+{"id": "T015", "lang": "ar", "category": "follow_up", "messages": [{"role": "user", "content": "أريد رؤية الزيارات ذات الأولوية المنخفضة"}, {"role": "assistant", "content": "{\"action\": \"get_visits\", \"arguments\": {\"dateRange\": null, \"fromDate\": null, \"toDate\": null, \"statusId\": null, \"priorityId\": 1, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "وماذا عن اليوم؟"}]}
+{"id": "T016", "lang": "ar", "category": "follow_up", "messages": [{"role": "user", "content": "أريد رؤية الزيارات ذات الأولوية المنخفضة"}, {"role": "assistant", "content": "{\"action\": \"get_visits\", \"arguments\": {\"dateRange\": null, \"fromDate\": null, \"toDate\": null, \"statusId\": null, \"priorityId\": 1, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "بس اللي قيد التنفيذ"}]}
+{"id": "T017", "lang": "ar", "category": "follow_up", "messages": [{"role": "user", "content": "ممكن تعرض مهامي المنجزة جزئياً"}, {"role": "assistant", "content": "{\"action\": \"get_tasks\", \"arguments\": {\"dateRange\": null, \"fromDate\": null, \"toDate\": null, \"statusId\": 7, \"priorityId\": null, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "وماذا عن اليوم؟"}]}
+{"id": "T018", "lang": "ar", "category": "follow_up", "messages": [{"role": "user", "content": "ممكن تعرض المهام قيد الانتظار من اليوم فصاعداً"}, {"role": "assistant", "content": "{\"action\": \"get_tasks\", \"arguments\": {\"dateRange\": \"current\", \"fromDate\": null, \"toDate\": null, \"statusId\": 1, \"priorityId\": null, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "وماذا عن اليوم؟"}]}
+{"id": "T019", "lang": "en", "category": "follow_up", "messages": [{"role": "user", "content": "I need my visits this week"}, {"role": "assistant", "content": "{\"action\": \"get_visits\", \"arguments\": {\"dateRange\": \"this_week\", \"fromDate\": null, \"toDate\": null, \"statusId\": null, \"priorityId\": null, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "Just the in progress ones"}]}
+{"id": "T020", "lang": "en", "category": "follow_up", "messages": [{"role": "user", "content": "Bring up low priority tasks for my team"}, {"role": "assistant", "content": "{\"action\": \"get_tasks\", \"arguments\": {\"dateRange\": null, \"fromDate\": null, \"toDate\": null, \"statusId\": null, \"priorityId\": 1, \"scope\": \"my_team\", \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "And medium priority?"}]}
+{"id": "T021", "lang": "en", "category": "follow_up", "messages": [{"role": "user", "content": "Pull up tasks for everyone I can see"}, {"role": "assistant", "content": "{\"action\": \"get_tasks\", \"arguments\": {\"dateRange\": null, \"fromDate\": null, \"toDate\": null, \"statusId\": null, \"priorityId\": null, \"scope\": \"all\", \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "How about today?"}]}
+{"id": "T022", "lang": "en", "category": "follow_up", "messages": [{"role": "user", "content": "Pull up pending visits for this month"}, {"role": "assistant", "content": "{\"action\": \"get_visits\", \"arguments\": {\"dateRange\": \"this_month\", \"fromDate\": null, \"toDate\": null, \"statusId\": 1, \"priorityId\": null, \"scope\": null, \"search\": null}, \"needs_clarification\": false, \"clarification_question\": null, \"refused\": false, \"refusal_reason\": null}"}, {"role": "user", "content": "How about today?"}]}
+{"id": "T023", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "ممكن تعرض زياراتي؟"}]}
+{"id": "T024", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "أريد رؤية الزيارات"}]}
+{"id": "T025", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "أريد رؤية المهام عن الجرد لي أنا فقط؟"}]}
+{"id": "T026", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "افتح لي مهامي عن العقود الخاصة بفريقي؟"}]}
+{"id": "T027", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "افتح لي المهام الجارية لهذا الشهر"}]}
+{"id": "T028", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "أريد رؤية مهامي المعلقة لفريقي؟"}]}
+{"id": "T029", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "طلّع لي المهام المنتهية"}]}
+{"id": "T030", "lang": "ar", "category": "list", "messages": [{"role": "user", "content": "أريد رؤية المهام المنتهية بأولوية منخفضة؟"}]}
+{"id": "T031", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "Let me see high priority visits with training for my team"}]}
+{"id": "T032", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "I need visits mentioning inspection for my team?"}]}
+{"id": "T033", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "I need my visits"}]}
+{"id": "T034", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "Could you list visits of my team last week?"}]}
+{"id": "T035", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "Let me see visits with contract?"}]}
+{"id": "T036", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "Could you list rejected visits with branch"}]}
+{"id": "T037", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "Could you list high priority visits that are upcoming?"}]}
+{"id": "T038", "lang": "en", "category": "list", "messages": [{"role": "user", "content": "I need high priority tasks about inspection?"}]}
+{"id": "T039", "lang": "ar", "category": "main", "messages": [{"role": "user", "content": "القائمة الأساسية للمهام عن التقرير بأولوية عالية"}]}
+{"id": "T040", "lang": "ar", "category": "main", "messages": [{"role": "user", "content": "أعطني القائمة الرئيسية"}]}
+{"id": "T041", "lang": "ar", "category": "main", "messages": [{"role": "user", "content": "أعطني القائمة الرئيسية عن التقرير"}]}
+{"id": "T042", "lang": "en", "category": "main", "messages": [{"role": "user", "content": "The main list"}]}
+{"id": "T043", "lang": "en", "category": "main", "messages": [{"role": "user", "content": "I need the main list of visits about warehouse from last week"}]}
+{"id": "T044", "lang": "en", "category": "main", "messages": [{"role": "user", "content": "I need the main list of visits that are ongoing"}]}
+{"id": "T045", "lang": "ar", "category": "out_of_scope", "messages": [{"role": "user", "content": "ما أخبار اليوم؟"}]}
+{"id": "T046", "lang": "ar", "category": "out_of_scope", "messages": [{"role": "user", "content": "اعرض رصيد إجازاتي"}]}
+{"id": "T047", "lang": "ar", "category": "out_of_scope", "messages": [{"role": "user", "content": "كم المكافأة حقتي؟"}]}
+{"id": "T048", "lang": "ar", "category": "out_of_scope", "messages": [{"role": "user", "content": "احجز قاعة اجتماعات"}]}
+{"id": "T049", "lang": "en", "category": "out_of_scope", "messages": [{"role": "user", "content": "Show my leave balance"}]}
+{"id": "T050", "lang": "en", "category": "out_of_scope", "messages": [{"role": "user", "content": "How much is my bonus?"}]}
+{"id": "T051", "lang": "en", "category": "out_of_scope", "messages": [{"role": "user", "content": "What's the news today?"}]}
+{"id": "T052", "lang": "en", "category": "out_of_scope", "messages": [{"role": "user", "content": "Book a meeting room"}]}
+{"id": "T053", "lang": "ar", "category": "question", "messages": [{"role": "user", "content": "في عندي زيارات لليوم؟"}]}
+{"id": "T054", "lang": "ar", "category": "question", "messages": [{"role": "user", "content": "قل لي مهام ذات الأولوية المتوسطة"}]}
+{"id": "T055", "lang": "ar", "category": "question", "messages": [{"role": "user", "content": "هل هناك زيارات قيد التنفيذ؟"}]}
+{"id": "T056", "lang": "en", "category": "question", "messages": [{"role": "user", "content": "Are there cancelled tasks?"}]}
+{"id": "T057", "lang": "en", "category": "question", "messages": [{"role": "user", "content": "Do I have any tasks from before today?"}]}
+{"id": "T058", "lang": "en", "category": "question", "messages": [{"role": "user", "content": "Tell me my high priority visits"}]}
+{"id": "T059", "lang": "ar", "category": "refusal", "messages": [{"role": "user", "content": "أجّل الجرد ليوم الأحد"}]}
+{"id": "T060", "lang": "ar", "category": "refusal", "messages": [{"role": "user", "content": "من فضلك أنشئ زيارة للمورد"}]}
+{"id": "T061", "lang": "ar", "category": "refusal", "messages": [{"role": "user", "content": "اجعل زيارتي مكتملة"}]}
+{"id": "T062", "lang": "ar", "category": "refusal", "messages": [{"role": "user", "content": "ألغِ كل مهامي المعلقة"}]}
+{"id": "T063", "lang": "en", "category": "refusal", "messages": [{"role": "user", "content": "Mark my visit as completed"}]}
+{"id": "T064", "lang": "en", "category": "refusal", "messages": [{"role": "user", "content": "Please create a visit to the supplier"}]}
+{"id": "T065", "lang": "en", "category": "refusal", "messages": [{"role": "user", "content": "Cancel all my pending tasks"}]}
+{"id": "T066", "lang": "en", "category": "refusal", "messages": [{"role": "user", "content": "Postpone the audit to Sunday"}]}
+{"id": "T067", "lang": "ar", "category": "vague", "messages": [{"role": "user", "content": "المكتملة"}]}
+{"id": "T068", "lang": "ar", "category": "vague", "messages": [{"role": "user", "content": "إيش أخباري؟"}]}
+{"id": "T069", "lang": "ar", "category": "vague", "messages": [{"role": "user", "content": "وريني حاجة"}]}
+{"id": "T070", "lang": "ar", "category": "vague", "messages": [{"role": "user", "content": "شيك"}]}
+{"id": "T071", "lang": "en", "category": "vague", "messages": [{"role": "user", "content": "Check"}]}
+{"id": "T072", "lang": "en", "category": "vague", "messages": [{"role": "user", "content": "The completed ones"}]}
+{"id": "T073", "lang": "en", "category": "vague", "messages": [{"role": "user", "content": "What's up with my work?"}]}
+{"id": "T074", "lang": "en", "category": "vague", "messages": [{"role": "user", "content": "Show stuff"}]}

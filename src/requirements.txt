@@ -1,0 +1,9 @@
+# Installed for this project (pip install -r requirements.txt)
+pydantic>=2,<3
+pytest>=8
+
+# Already installed in ../.venv (listed for reference, do not reinstall blindly):
+# mlx==0.29.3
+# mlx-lm==0.29.1
+# transformers==4.57.6
+# PyYAML

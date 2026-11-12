@@ -1,0 +1,92 @@
+{
+  "get_visits": {
+    "description": "List the visits (on-site activities) assigned to the user, with optional filters.",
+    "arguments": ["dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"],
+    "examples_en": [
+      "Show my visits",
+      "Which visits are pending today?",
+      "List the high priority visits from last week",
+      "Visits of my team this month",
+      "Find visits about maintenance"
+    ],
+    "examples_ar": [
+      "اعرض زياراتي",
+      "ما هي الزيارات المعلقة اليوم؟",
+      "الزيارات ذات الأولوية العالية من الأسبوع الماضي",
+      "زيارات فريقي هذا الشهر",
+      "ابحث عن زيارات الصيانة"
+    ]
+  },
+  "get_tasks": {
+    "description": "List the tasks assigned to the user, with optional filters. Tasks have no category.",
+    "arguments": ["dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"],
+    "examples_en": [
+      "Show my tasks",
+      "Tasks in progress",
+      "My completed tasks from yesterday",
+      "Private tasks with low priority",
+      "Upcoming tasks"
+    ],
+    "examples_ar": [
+      "اعرض مهامي",
+      "المهام قيد التنفيذ",
+      "مهامي المكتملة أمس",
+      "المهام الخاصة ذات الأولوية المنخفضة",
+      "المهام القادمة"
+    ]
+  },
+  "get_main_activities": {
+    "description": "The Main list: the activities themselves (masters), not the assigned occurrences. Only when the user asks for the main list, masters, or the activities they manage.",
+    "arguments": ["typeId", "dateRange", "fromDate", "toDate", "statusId", "priorityId", "scope", "search"],
+    "examples_en": [
+      "Open the main activities list",
+      "Show the master visits",
+      "Main list of tasks that are pending",
+      "Main activities with high priority",
+      "Show the main list for this month"
+    ],
+    "examples_ar": [
+      "افتح قائمة الأنشطة الرئيسية",
+      "اعرض الزيارات الرئيسية",
+      "القائمة الرئيسية للمهام المعلقة",
+      "الأنشطة الرئيسية ذات الأولوية العالية",
+      "اعرض القائمة الرئيسية لهذا الشهر"
+    ]
+  },
+  "get_dashboard": {
+    "description": "Counts and summary: totals, per status, late. Always counts both visits and tasks.",
+    "arguments": ["dateRange", "fromDate", "toDate", "statusId", "scope"],
+    "examples_en": [
+      "How many activities do I have?",
+      "Show the dashboard",
+      "How many tasks are late?",
+      "Give me a summary for this week",
+      "Count of completed activities this month"
+    ],
+    "examples_ar": [
+      "كم عدد أنشطتي؟",
+      "اعرض لوحة المتابعة",
+      "كم مهمة متأخرة؟",
+      "أعطني ملخص هذا الأسبوع",
+      "عدد الأنشطة المكتملة هذا الشهر"
+    ]
+  },
+  "needs_clarification": {
+    "description": "Too vague to pick an action. Ask one short question in the user's language.",
+    "arguments": [],
+    "examples_en": ["Show me", "What do I have?", "Details please", "Activities", "Anything new?"],
+    "examples_ar": ["اعرض لي", "ماذا لدي؟", "التفاصيل من فضلك", "الأنشطة", "هل يوجد جديد؟"]
+  },
+  "refused_write": {
+    "description": "Any create / edit / delete / reschedule / change status / approve request. The assistant is read-only.",
+    "arguments": [],
+    "examples_en": ["Create a new visit for tomorrow", "Delete my last task", "Mark the task as completed", "Reschedule my visit to Monday", "Approve the pending task"],
+    "examples_ar": ["أنشئ زيارة جديدة لبكرة", "احذف آخر مهمة", "اجعل المهمة مكتملة", "أعد جدولة زيارتي ليوم الاثنين", "وافق على المهمة المعلقة"]
+  },
+  "out_of_scope": {
+    "description": "Anything outside Activities: leave, payroll, attendance, weather, general chat.",
+    "arguments": [],
+    "examples_en": ["How many leave days do I have?", "When is payday?", "What's the weather tomorrow?", "Tell me a joke", "What time did I check in to work today?"],
+    "examples_ar": ["كم يوم إجازة متبقي لي؟", "متى ينزل الراتب؟", "كيف الطقس بكرة؟", "احكِ لي نكتة", "متى سجلت حضوري اليوم؟"]
+  }
+}

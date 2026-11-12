@@ -1,0 +1,140 @@
+# The 4 read-only Activities endpoints this assistant can call.
+# Source: specs-talentlink/specs/001-activities/api-contracts.md (Doc v2.0, 2026-10-27, CL-10),
+# with field names from current-state-codebase-logic-tech.md §3-§4 where api-contracts.md points there.
+# "unconfirmed (Qnn)" = an open question in next-tasks-open-questions.md.
+# "unconfirmed (no Q)" = the specs do not name this field; nobody has asked yet.
+
+conventions:
+  method: POST
+  path: "Mobile/VisitAndTask/<Name>"
+  path_prefix: "unconfirmed (Q22) - maybe v2/"
+  request_envelope: >
+    The request DTO sits in the common envelope's `data`. User, company, device and language
+    are filled in by the app (never by the model).
+  success: "success == true AND statusCode == 200"
+  failure: "anything else; show responseMessage. Failure codes are unconfirmed (Q24)"
+  response_result_field: "unconfirmed (no Q) - the specs say the result is mapped from the response, but do not name the field"
+  dates: "yyyy-MM-ddTHH:mm:ss, English digits, either end may be null (open). Format unconfirmed (Q23). End inclusive or exclusive unconfirmed (Q14)"
+  any_value: "E1/E2: null for single IDs, [] for lists. E3: 0 for single IDs, [] for lists"
+  paging: "skip = (page - 1) * 10, pageSize = 10"
+  sort: "direction: desc = newest first, asc = oldest first, by scheduled start. E1 has no sort"
+
+scope_mapping:
+  # Done in Python, never by the model.
+  all: {onlyMe: true, ids: "picked departments/employees, or every allowed one when nothing is picked"}
+  my_team: {onlyMe: false, ids: "picked departments/employees, or every allowed one when nothing is picked"}
+  my_activities: {onlyMe: false, ids: "the user's own company + self"}
+  private: {onlyMe: true, ids: "the user's own company + self"}
+  note: "All -> onlyMe true is what the app does today; the code comment says it should send no filter. unconfirmed (Q16). Departments travel as companyId[] (Q15)"
+
+endpoints:
+  E1:
+    name: GetTaskAndVisitDashboard
+    purpose: "Dashboard counts: totals, per status, late, and today/current/previous for tasks"
+    assistant_action: get_dashboard
+    request_dto: NewActivitiesFilterRequest
+    request_fields:
+      fromDateTime: "string yyyy-MM-ddTHH:mm:ss or null"
+      endDateTime: "string yyyy-MM-ddTHH:mm:ss or null"
+      statusId: "status filter; single or list unconfirmed (no Q)"
+      categoryId: "list, one item or [] (not used by this assistant)"
+      executionType: "field name unconfirmed (no Q) (not used by this assistant)"
+      onlyMe: "bool, from scope"
+      companyId: "list of int, from scope"
+      employeeId: "list of int, from scope; field name unconfirmed (no Q)"
+    not_supported: ["type (always both)", "priority (Q26)", "search (Q26)", "sort", "paging", "Main chip (Q25)"]
+    response_type: NewRemoteActivitiesDashboard
+    response_fields:
+      taskCount: int
+      visitCount: int
+      taskStatusList: "list of per-status counts; field names unconfirmed (Q20)"
+      visitStatusList: "list of per-status counts; field names unconfirmed (Q20)"
+      tasksLate: int
+      visitsLate: int
+      taskSummary: "object with totalTasks* counts for today/current/previous; exact names unconfirmed (no Q)"
+    missing_numbers: "shown as 0"
+
+  E2:
+    name: GetVisitAndTaskAssignedToLoggedInUser
+    purpose: "List of activity occurrences assigned to the logged-in user (default, Current, Previous), paged"
+    assistant_actions:
+      get_visits: {typeId: 2}
+      get_tasks: {typeId: 1, categoryId: "[] (tasks have no category)"}
+    request_dto: NewActivitiesListRequest
+    request_fields:
+      typeId: "1 task, 2 visit"
+      statusId: "single int or null"
+      priorityId: "single int or null"
+      categoryId: "list, one item or [] (not used by this assistant)"
+      executionType: "field name unconfirmed (no Q) (not used by this assistant)"
+      searchValue: "string; which fields it matches is unconfirmed (Q19)"
+      fromDateTime: "string or null"
+      endDateTime: "string or null"
+      onlyMe: "bool, from scope"
+      companyId: "list of int, from scope"
+      employeeId: "list of int, from scope; field name unconfirmed (no Q)"
+      direction: "desc | asc"
+      skip: int
+      pageSize: 10
+    team_ids_returned: "whether team members' activities come back is unconfirmed (Q28)"
+    response_type: NewRemoteActivitiesPage
+    response_fields:
+      totalCount: int
+      items: "list of activity occurrences; list field name unconfirmed (no Q)"
+    item_fields:
+      detailsId: "occurrence id"
+      masterId: int
+      typeId: "1 task, 2 visit; unknown -> task"
+      masterName: "title"
+      status: "{id, name, color}"
+      priorityId: int
+      priorityName: string
+      onlyMe: "bool (private)"
+      userId: int
+      userName: string
+      assignByName: string
+      createdAt: "ISO date-time"
+      taskExecutionId: int
+      taskExecutionName: string
+      addressText: string
+      masterData: "{description, visitCategoryId, fromDateTime, endDateTime, onlyMe, companyId, assignedTo[]}"
+
+  E3:
+    name: GetVisitAndTaskList
+    purpose: "Main list: the activities themselves (masters), paged"
+    assistant_action: get_main_activities
+    request_dto: NewMainActivitiesRequest
+    request_fields:
+      typeId: "int, 0 = any"
+      statusId: "int, 0 = any"
+      priorityId: "LIST of int, [] = any (sending a plain 0 gives a 500)"
+      categoryId: "single int, 0 = any (not used by this assistant)"
+      currentOrOld: "always 0"
+      searchValue: "string; matches unconfirmed (Q19)"
+      fromDateTime: "string or null (used only when a date range is set)"
+      endDateTime: "string or null"
+      onlyMe: "bool, from scope"
+      companyId: "list of int, from scope"
+      employeeId: "list of int, from scope; field name unconfirmed (no Q)"
+      direction: "desc | asc"
+      skip: int
+      pageSize: 10
+    not_supported: ["execution type (Q27)", "Current / Previous (ignored by Main)"]
+    response_type: "untyped: page with total OR plain list, unconfirmed (Q18)"
+    response_fields:
+      when_map: "items (or data) + totalCount"
+      when_list: "plain list, no total; a full page means maybe more"
+    item_fields:
+      id: "master id"
+      typeId: "1 task, 2 visit; unknown -> task"
+      name: "title; field name unconfirmed (no Q) - the app parses it with the old RemoteVisitAndTask model"
+      status: "{id, name, color}"
+      priorityId: int
+      priorityName: string
+      onlyMe: bool
+      startDateTime: "ISO or M/d/yyyy[ h:mm:ss a | HH:mm:ss | HH:mm]"
+      endDateTime: "same as startDateTime"
+      fromDate: "fallback when startDateTime is missing"
+      fromTime: "fallback"
+      toDate: "fallback"
+      toTime: "fallback"

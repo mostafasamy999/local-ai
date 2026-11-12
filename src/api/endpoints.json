@@ -1,0 +1,44 @@
+{
+  "source": "specs-talentlink/specs/001-activities/api-contracts.md (Doc v2.0, CL-10)",
+  "base_path": "Mobile/VisitAndTask/",
+  "path_prefix": "unconfirmed (Q22)",
+  "method": "POST",
+  "endpoints": [
+    {
+      "id": "E1",
+      "name": "GetTaskAndVisitDashboard",
+      "path": "Mobile/VisitAndTask/GetTaskAndVisitDashboard",
+      "actions": ["get_dashboard"],
+      "request_dto": "NewActivitiesFilterRequest",
+      "response_type": "NewRemoteActivitiesDashboard",
+      "fixed_values": {},
+      "filters": ["status", "dates", "scope"],
+      "ignores": ["type", "priority (Q26)", "search (Q26)", "Main chip (Q25)"]
+    },
+    {
+      "id": "E2",
+      "name": "GetVisitAndTaskAssignedToLoggedInUser",
+      "path": "Mobile/VisitAndTask/GetVisitAndTaskAssignedToLoggedInUser",
+      "actions": ["get_visits", "get_tasks"],
+      "request_dto": "NewActivitiesListRequest",
+      "response_type": "NewRemoteActivitiesPage",
+      "fixed_values": {
+        "get_visits": {"typeId": 2},
+        "get_tasks": {"typeId": 1, "categoryId": []}
+      },
+      "filters": ["type", "status", "priority", "dates", "scope", "search", "sort", "paging"],
+      "ignores": []
+    },
+    {
+      "id": "E3",
+      "name": "GetVisitAndTaskList",
+      "path": "Mobile/VisitAndTask/GetVisitAndTaskList",
+      "actions": ["get_main_activities"],
+      "request_dto": "NewMainActivitiesRequest",
+      "response_type": "untyped: page or plain list, unconfirmed (Q18)",
+      "fixed_values": {"get_main_activities": {"currentOrOld": 0, "categoryId": 0}},
+      "filters": ["type", "status", "priority (list)", "dates", "scope", "search", "sort", "paging"],
+      "ignores": ["execution type (Q27)", "Current / Previous"]
+    }
+  ]
+}

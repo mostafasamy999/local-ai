@@ -1,0 +1,364 @@
+{"text": "Can you show waiting visits with maintenance that are upcoming", "lang": "en", "intent": "get_visits"}
+{"text": "Give me low-priority tasks of my team?", "lang": "en", "intent": "get_tasks"}
+{"text": "How many medium priority visits do I have?", "lang": "en", "intent": "get_visits"}
+{"text": "Tell me a joke", "lang": "en", "intent": "out_of_scope"}
+{"text": "What tasks do I have from before today?", "lang": "en", "intent": "get_tasks"}
+{"text": "أسند هذه المهمة لزميلي", "lang": "ar", "intent": "refused_write"}
+{"text": "اعرض مهامي لفريقي", "lang": "ar", "intent": "get_tasks"}
+{"text": "How many low priority visits do I have?", "lang": "en", "intent": "get_visits"}
+{"text": "Show everything", "lang": "en", "intent": "needs_clarification"}
+{"text": "Give me a summary today for the ongoing ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "هات المهام لي أنا فقط؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "اعرض لوحة المتابعة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "List partially completed tasks with contract", "lang": "en", "intent": "get_tasks"}
+{"text": "أعطني ملخص؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Which visits are cancelled?", "lang": "en", "intent": "get_visits"}
+{"text": "المعلقة", "lang": "ar", "intent": "needs_clarification"}
+{"text": "افتح الأنشطة الرئيسية المكتملة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "اعرض لي مهامي ذات الأولوية المنخفضة عن المورد", "lang": "ar", "intent": "get_tasks"}
+{"text": "كم يوم إجازة مرضية باقي؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Display low priority visits mentioning branch for my team", "lang": "en", "intent": "get_visits"}
+{"text": "عايز أشوف مهامي المرفوضة بأولوية عالية المحددة كخاصة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "اكتب لي إيميل للموارد البشرية", "lang": "ar", "intent": "out_of_scope"}
+{"text": "كم عدد الزيارات بأولوية منخفضة؟", "lang": "ar", "intent": "get_visits"}
+{"text": "Main list of tasks this month about warehouse", "lang": "en", "intent": "get_main_activities"}
+{"text": "كم زيارة ومهمة عندي؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "كم نشاط متأخر للأنشطة المنتهية؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Open the main activities this week that are completed", "lang": "en", "intent": "get_main_activities"}
+{"text": "كم نشاط متأخر للأنشطة الجارية؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Give me my visits about training", "lang": "en", "intent": "get_visits"}
+{"text": "اعرض لوحة المتابعة لهذا الشهر؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "How many low-priority tasks do I have?", "lang": "en", "intent": "get_tasks"}
+{"text": "اعرض لي", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Display my visits for my team from last week?", "lang": "en", "intent": "get_visits"}
+{"text": "What are my medium-priority tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "كم عدد المهام بأولوية منخفضة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "How many visits do I have for the ongoing ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "How many leave days do I have?", "lang": "en", "intent": "out_of_scope"}
+{"text": "سجّل دخولي للزيارة", "lang": "ar", "intent": "refused_write"}
+{"text": "List tasks mentioning training of my team", "lang": "en", "intent": "get_tasks"}
+{"text": "List my visits for everyone I can see from 1 September 2026 to 30 September 2026?", "lang": "en", "intent": "get_visits"}
+{"text": "التفاصيل من فضلك", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Cancel today's visit", "lang": "en", "intent": "refused_write"}
+{"text": "What is the company phone number?", "lang": "en", "intent": "out_of_scope"}
+{"text": "هات المهام المحددة كخاصة", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر لي الزيارات", "lang": "ar", "intent": "get_visits"}
+{"text": "Show the dashboard today assigned only to me?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Show canceled tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "كم عدد الزيارات ذات الأولوية العالية؟", "lang": "ar", "intent": "get_visits"}
+{"text": "اعرض كشف راتبي", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Display pending medium-priority tasks from 2026-10-01 to 15 October 2026", "lang": "en", "intent": "get_tasks"}
+{"text": "عد أنشطتي المحددة كخاصة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "كم زيارة عندي المحددة كخاصة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "أظهر الزيارات بأولوية منخفضة بخصوص التقرير", "lang": "ar", "intent": "get_visits"}
+{"text": "هات مهامي بأولوية منخفضة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Get my visits from last week", "lang": "en", "intent": "get_visits"}
+{"text": "إحصائيات أنشطتي امبارح؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Show finished tasks that are private?", "lang": "en", "intent": "get_tasks"}
+{"text": "Can you show my tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "Give me pending tasks about report of my team", "lang": "en", "intent": "get_tasks"}
+{"text": "When are the public holidays?", "lang": "en", "intent": "out_of_scope"}
+{"text": "عد أنشطتي من 2026-10-01 إلى 15 أكتوبر 2026؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "List rejected visits about maintenance from 2026-10-01 to 2026-10-15", "lang": "en", "intent": "get_visits"}
+{"text": "انقل اجتماعي لبكرة", "lang": "ar", "intent": "refused_write"}
+{"text": "Give me my visits with branch", "lang": "en", "intent": "get_visits"}
+{"text": "الحالة؟", "lang": "ar", "intent": "needs_clarification"}
+{"text": "What's there?", "lang": "en", "intent": "needs_clarification"}
+{"text": "ما رقم هاتف الشركة؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Delete the visit to the warehouse", "lang": "en", "intent": "refused_write"}
+{"text": "What time did I check in to work today?", "lang": "en", "intent": "out_of_scope"}
+{"text": "متى العطل الرسمية؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Show me tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "How many are late for the rejected ones today?", "lang": "en", "intent": "get_dashboard"}
+{"text": "أظهر لي زياراتي ذات الأولوية المتوسطة", "lang": "ar", "intent": "get_visits"}
+{"text": "عايز أشوف زياراتي التي تخص التدريب امبارح؟", "lang": "ar", "intent": "get_visits"}
+{"text": "What's 15 times 4?", "lang": "en", "intent": "out_of_scope"}
+{"text": "متى ينزل الراتب؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "ما زيارات ذات الأولوية المتوسطة؟", "lang": "ar", "intent": "get_visits"}
+{"text": "Which visits are finished?", "lang": "en", "intent": "get_visits"}
+{"text": "متى سجلت حضوري اليوم؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "غيّر حالة مهمتي إلى مكتملة", "lang": "ar", "intent": "refused_write"}
+{"text": "ورّيني مهامي المنتهية خلال آخر 7 أيام", "lang": "ar", "intent": "get_tasks"}
+{"text": "Complete the audit visit", "lang": "en", "intent": "refused_write"}
+{"text": "أبغى أشوف زياراتي المكتملة", "lang": "ar", "intent": "get_visits"}
+{"text": "Can you show partially completed visits mentioning warehouse?", "lang": "en", "intent": "get_visits"}
+{"text": "Display tasks with training for everyone I can see", "lang": "en", "intent": "get_tasks"}
+{"text": "Can you show finished medium-priority tasks about maintenance", "lang": "en", "intent": "get_tasks"}
+{"text": "القائمة الرئيسية للمهام لهذا الأسبوع", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Give me my visits with audit marked private", "lang": "en", "intent": "get_visits"}
+{"text": "How many sick days are left?", "lang": "en", "intent": "out_of_scope"}
+{"text": "Show high-priority visits about supplier?", "lang": "en", "intent": "get_visits"}
+{"text": "Write me an email to HR", "lang": "en", "intent": "out_of_scope"}
+{"text": "How many high priority visits do I have?", "lang": "en", "intent": "get_visits"}
+{"text": "اعرض الزيارات الأساسية عن الصيانة المكتملة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Any completed visits?", "lang": "en", "intent": "get_visits"}
+{"text": "Show my tasks that are only mine from last week", "lang": "en", "intent": "get_tasks"}
+{"text": "Give me a summary for the done ones for this month?", "lang": "en", "intent": "get_dashboard"}
+{"text": "I want to see my visits that are only mine today", "lang": "en", "intent": "get_visits"}
+{"text": "Show in progress high-priority visits in the last seven days?", "lang": "en", "intent": "get_visits"}
+{"text": "ابدأ مهمتي", "lang": "ar", "intent": "refused_write"}
+{"text": "Show me", "lang": "en", "intent": "needs_clarification"}
+{"text": "List tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "أظهر زياراتي بخصوص التفتيش لهذا الشهر", "lang": "ar", "intent": "get_visits"}
+{"text": "أي مهام الملغاة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Give me a summary this month?", "lang": "en", "intent": "get_dashboard"}
+{"text": "كم عدد أنشطتي للأنشطة المكتملة جزئياً؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Add a task called monthly report", "lang": "en", "intent": "refused_write"}
+{"text": "Show the master tasks that are cancelled", "lang": "en", "intent": "get_main_activities"}
+{"text": "Go to the main list about contract", "lang": "en", "intent": "get_main_activities"}
+{"text": "أظهر لي الزيارات بخصوص الجرد لفريقي القادمة", "lang": "ar", "intent": "get_visits"}
+{"text": "كم عدد أنشطتي؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "أي زيارات المرفوضة؟", "lang": "ar", "intent": "get_visits"}
+{"text": "Edit the title of my visit", "lang": "en", "intent": "refused_write"}
+{"text": "عايز أشوف زياراتي المحددة كخاصة القادمة", "lang": "ar", "intent": "get_visits"}
+{"text": "Show visits mentioning report of my team in the last seven days?", "lang": "en", "intent": "get_visits"}
+{"text": "How many high-priority tasks do I have?", "lang": "en", "intent": "get_tasks"}
+{"text": "أبغى أشوف المهام ذات الأولوية المنخفضة المحددة كخاصة لهذا الأسبوع", "lang": "ar", "intent": "get_tasks"}
+{"text": "ما مهام بأولوية منخفضة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Get my tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "عايز أشوف المهام المرفوضة ذات الأولوية المنخفضة لفريقي", "lang": "ar", "intent": "get_tasks"}
+{"text": "احذف آخر مهمة", "lang": "ar", "intent": "refused_write"}
+{"text": "Which tasks are rejected?", "lang": "en", "intent": "get_tasks"}
+{"text": "كم نشاط متأخر الخاصة بفريقي للأنشطة الملغية؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "هات مهامي عن المورد؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "أنشئ زيارة جديدة لبكرة", "lang": "ar", "intent": "refused_write"}
+{"text": "Give me waiting medium priority visits", "lang": "en", "intent": "get_visits"}
+{"text": "How many visits do I have?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Add a note to the visit", "lang": "en", "intent": "refused_write"}
+{"text": "اعرض لي زياراتي الجارية لكل من أستطيع رؤيتهم", "lang": "ar", "intent": "get_visits"}
+{"text": "اعرض كل شيء", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Delete my last task", "lang": "en", "intent": "refused_write"}
+{"text": "اجعل أولوية مهمتي عالية", "lang": "ar", "intent": "refused_write"}
+{"text": "Display partially completed tasks with audit in the past", "lang": "en", "intent": "get_tasks"}
+{"text": "Details please", "lang": "en", "intent": "needs_clarification"}
+{"text": "ما هي مهام لليوم؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "List tasks for my team until 2026-06-30", "lang": "en", "intent": "get_tasks"}
+{"text": "هل عندي مهام الملغاة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "قائمة الأنشطة الرئيسية المرفوضة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Can you show ongoing visits last week", "lang": "en", "intent": "get_visits"}
+{"text": "القائمة الرئيسية للزيارات الأسبوع الماضي عن التدريب", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Give me my visits mentioning meeting", "lang": "en", "intent": "get_visits"}
+{"text": "Show waiting tasks that are only mine", "lang": "en", "intent": "get_tasks"}
+{"text": "Main list of visits", "lang": "en", "intent": "get_main_activities"}
+{"text": "Show the dashboard for the rejected ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Show my tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "أضف ملاحظة على الزيارة", "lang": "ar", "intent": "refused_write"}
+{"text": "اعرض لي المهام ذات الأولوية المتوسطة عن المورد اليوم", "lang": "ar", "intent": "get_tasks"}
+{"text": "اجعل مهمة التفتيش منتهية", "lang": "ar", "intent": "refused_write"}
+{"text": "Get medium-priority tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "Show", "lang": "en", "intent": "needs_clarification"}
+{"text": "Give me tasks assigned only to me", "lang": "en", "intent": "get_tasks"}
+{"text": "اعرض لي الزيارات", "lang": "ar", "intent": "get_visits"}
+{"text": "Show the master visits with low priority", "lang": "en", "intent": "get_main_activities"}
+{"text": "List them", "lang": "en", "intent": "needs_clarification"}
+{"text": "Start my task", "lang": "en", "intent": "refused_write"}
+{"text": "List done low-priority tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "I want to see high priority visits about training", "lang": "en", "intent": "get_visits"}
+{"text": "Count my activities today marked private?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Can you show my visits?", "lang": "en", "intent": "get_visits"}
+{"text": "Show medium priority visits with training this week?", "lang": "en", "intent": "get_visits"}
+{"text": "كم مهمة عندي لي أنا فقط؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "أي مهام قيد التنفيذ؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "ورّيني المهام المرفوضة التي تخص الجرد المسندة لي فقط", "lang": "ar", "intent": "get_tasks"}
+{"text": "Status?", "lang": "en", "intent": "needs_clarification"}
+{"text": "بس العالية", "lang": "ar", "intent": "needs_clarification"}
+{"text": "هات الزيارات المكتملة من 1 أكتوبر 2026 إلى 15 أكتوبر 2026", "lang": "ar", "intent": "get_visits"}
+{"text": "Which visits are partly completed?", "lang": "en", "intent": "get_visits"}
+{"text": "Statistics of my activities?", "lang": "en", "intent": "get_dashboard"}
+{"text": "اعرض الزيارات الأساسية لليوم عن المورد", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Get in progress visits that are only mine", "lang": "en", "intent": "get_visits"}
+{"text": "أظهر لي مهامي الخاصة بفريقي خلال آخر 7 أيام؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر زياراتي عن الفرع الخاصة بفريقي", "lang": "ar", "intent": "get_visits"}
+{"text": "Approve the pending task", "lang": "en", "intent": "refused_write"}
+{"text": "Help", "lang": "en", "intent": "needs_clarification"}
+{"text": "عايز أشوف زياراتي ذات الأولوية المتوسطة", "lang": "ar", "intent": "get_visits"}
+{"text": "أظهر زياراتي ذات الأولوية المتوسطة التي تخص المورد من 1 أكتوبر 2026 إلى 2026-10-15", "lang": "ar", "intent": "get_visits"}
+{"text": "احكِ لي نكتة", "lang": "ar", "intent": "out_of_scope"}
+{"text": "اعرض المهام الأساسية", "lang": "ar", "intent": "get_main_activities"}
+{"text": "I want to see canceled tasks for my team", "lang": "en", "intent": "get_tasks"}
+{"text": "روح للقائمة الرئيسية بأولوية منخفضة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "اعرض حضوري هذا الشهر", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Show the dashboard this week?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Show the main list", "lang": "en", "intent": "get_main_activities"}
+{"text": "Show my attendance this month", "lang": "en", "intent": "out_of_scope"}
+{"text": "Show me tasks mentioning report that are private", "lang": "en", "intent": "get_tasks"}
+{"text": "Show rejected high-priority visits?", "lang": "en", "intent": "get_visits"}
+{"text": "Which tasks are partly completed?", "lang": "en", "intent": "get_tasks"}
+{"text": "List pending visits in the last seven days", "lang": "en", "intent": "get_visits"}
+{"text": "Can you show high-priority visits in the past?", "lang": "en", "intent": "get_visits"}
+{"text": "اعرضها", "lang": "ar", "intent": "needs_clarification"}
+{"text": "How many medium-priority tasks do I have?", "lang": "en", "intent": "get_tasks"}
+{"text": "أبغى أشوف الزيارات الملغية بأولوية عالية", "lang": "ar", "intent": "get_visits"}
+{"text": "Disable the main activity", "lang": "en", "intent": "refused_write"}
+{"text": "عايز أشوف الزيارات من اليوم فصاعداً؟", "lang": "ar", "intent": "get_visits"}
+{"text": "ورّيني المهام بأولوية متوسطة خلال آخر سبعة أيام؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر لي مهامي عن الجرد", "lang": "ar", "intent": "get_tasks"}
+{"text": "Update the progress to 50%", "lang": "en", "intent": "refused_write"}
+{"text": "ورّيني المهام", "lang": "ar", "intent": "get_tasks"}
+{"text": "اعرض لي مهامي ذات الأولوية المتوسطة", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر زياراتي بأولوية متوسطة المسندة لي فقط الأسبوع الماضي", "lang": "ar", "intent": "get_visits"}
+{"text": "Give me a summary for the waiting ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "القائمة الرئيسية للمهام المكتملة جزئياً", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Request a vacation for next week", "lang": "en", "intent": "out_of_scope"}
+{"text": "List tasks for this month", "lang": "en", "intent": "get_tasks"}
+{"text": "Any canceled tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "امسح كل المهام الملغاة", "lang": "ar", "intent": "refused_write"}
+{"text": "لليوم", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Give me visits about supplier", "lang": "en", "intent": "get_visits"}
+{"text": "Can you check?", "lang": "en", "intent": "needs_clarification"}
+{"text": "Activities", "lang": "en", "intent": "needs_clarification"}
+{"text": "ورّيني زياراتي ذات الأولوية المنخفضة التي تخص العقود؟", "lang": "ar", "intent": "get_visits"}
+{"text": "أظهر لي زياراتي لفريقي؟", "lang": "ar", "intent": "get_visits"}
+{"text": "Can you show my visits of my team", "lang": "en", "intent": "get_visits"}
+{"text": "Show the master tasks", "lang": "en", "intent": "get_main_activities"}
+{"text": "Show the dashboard in the last 7 days?", "lang": "en", "intent": "get_dashboard"}
+{"text": "اعرض لوحة المتابعة للأنشطة قيد التنفيذ لفريقي؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "قائمة الأنشطة الرئيسية عن المورد", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Statistics of my activities from yesterday that are only mine?", "lang": "en", "intent": "get_dashboard"}
+{"text": "Reject the branch visit", "lang": "en", "intent": "refused_write"}
+{"text": "أعطني ملخص للأنشطة المرفوضة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Show my salary slip", "lang": "en", "intent": "out_of_scope"}
+{"text": "Get tasks mentioning training", "lang": "en", "intent": "get_tasks"}
+{"text": "Who is my manager?", "lang": "en", "intent": "out_of_scope"}
+{"text": "List partly completed high-priority visits", "lang": "en", "intent": "get_visits"}
+{"text": "هل عندي زيارات المكتملة جزئياً؟", "lang": "ar", "intent": "get_visits"}
+{"text": "كم نشاط متأخر المحددة كخاصة خلال آخر سبعة أيام؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "أي زيارات المنتهية؟", "lang": "ar", "intent": "get_visits"}
+{"text": "عايز أشوف المهام بخصوص الجرد", "lang": "ar", "intent": "get_tasks"}
+{"text": "اطلب لي إجازة الأسبوع القادم", "lang": "ar", "intent": "out_of_scope"}
+{"text": "اعرض", "lang": "ar", "intent": "needs_clarification"}
+{"text": "أضف مهمة اسمها التقرير الشهري", "lang": "ar", "intent": "refused_write"}
+{"text": "أظهر الزيارات بأولوية منخفضة بخصوص المستودع امبارح؟", "lang": "ar", "intent": "get_visits"}
+{"text": "كم عدد الزيارات بأولوية متوسطة؟", "lang": "ar", "intent": "get_visits"}
+{"text": "كم يوم إجازة متبقي لي؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "ما مهام ذات الأولوية المتوسطة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "What visits do I have today?", "lang": "en", "intent": "get_visits"}
+{"text": "Display visits mentioning supplier?", "lang": "en", "intent": "get_visits"}
+{"text": "افتح الأنشطة الرئيسية اليوم عن التقرير", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Go to the main list", "lang": "en", "intent": "get_main_activities"}
+{"text": "I want to see rejected high-priority visits", "lang": "en", "intent": "get_visits"}
+{"text": "ورّيني الزيارات التي تخص التقرير المسندة لي فقط", "lang": "ar", "intent": "get_visits"}
+{"text": "What's my overtime?", "lang": "en", "intent": "out_of_scope"}
+{"text": "Show the main list about report", "lang": "en", "intent": "get_main_activities"}
+{"text": "أظهر مهامي الملغاة الخاصة بفريقي الأسبوع الماضي", "lang": "ar", "intent": "get_tasks"}
+{"text": "اعرض المهام", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر المهام الخاصة بفريقي الأسبوع الماضي", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر زياراتي التي تخص المستودع لي أنا فقط", "lang": "ar", "intent": "get_visits"}
+{"text": "افتحها", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Mark the inspection task as done", "lang": "en", "intent": "refused_write"}
+{"text": "عد أنشطتي لهذا الشهر؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "How many visits and tasks do I have for the cancelled ones that are only mine?", "lang": "en", "intent": "get_dashboard"}
+{"text": "أبغى أشوف زياراتي عن المورد", "lang": "ar", "intent": "get_visits"}
+{"text": "Show the dashboard for the partially completed ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "أعطني القائمة", "lang": "ar", "intent": "needs_clarification"}
+{"text": "حدّث نسبة الإنجاز إلى 50%", "lang": "ar", "intent": "refused_write"}
+{"text": "What are my medium-priority visits?", "lang": "en", "intent": "get_visits"}
+{"text": "Display rejected high-priority visits?", "lang": "en", "intent": "get_visits"}
+{"text": "ورّيني زياراتي", "lang": "ar", "intent": "get_visits"}
+{"text": "اعرض المهام الأساسية الجارية", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Change the status of my task to completed", "lang": "en", "intent": "refused_write"}
+{"text": "ما هي مهام خلال آخر سبعة أيام؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "عايز أشوف زياراتي المكتملة عن الاجتماع؟", "lang": "ar", "intent": "get_visits"}
+{"text": "What are my high priority tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "ممكن تشيك؟", "lang": "ar", "intent": "needs_clarification"}
+{"text": "Main list of tasks from yesterday that are partially completed", "lang": "en", "intent": "get_main_activities"}
+{"text": "Give me partly completed low-priority tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "اعرض زياراتي؟", "lang": "ar", "intent": "get_visits"}
+{"text": "When is payday?", "lang": "en", "intent": "out_of_scope"}
+{"text": "أبغى أشوف المهام ذات الأولوية المنخفضة المسندة لي فقط؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Any partially completed tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "Activities overview for the cancelled ones for my team?", "lang": "en", "intent": "get_dashboard"}
+{"text": "كم عدد المهام ذات الأولوية المتوسطة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "I want to see finished tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "ما هي زيارات هذا الشهر؟", "lang": "ar", "intent": "get_visits"}
+{"text": "عايز أشوف الزيارات لفريقي الأسبوع الماضي", "lang": "ar", "intent": "get_visits"}
+{"text": "Create a new visit for tomorrow", "lang": "en", "intent": "refused_write"}
+{"text": "عد أنشطتي؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "Anything new?", "lang": "en", "intent": "needs_clarification"}
+{"text": "ما زيارات ذات الأولوية العالية؟", "lang": "ar", "intent": "get_visits"}
+{"text": "هات مهامي بخصوص العقود", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر لي مهامي بأولوية عالية بخصوص التقرير؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "List my tasks", "lang": "en", "intent": "get_tasks"}
+{"text": "Show pending visits that are private today", "lang": "en", "intent": "get_visits"}
+{"text": "أظهر مهامي", "lang": "ar", "intent": "get_tasks"}
+{"text": "Give me the list", "lang": "en", "intent": "needs_clarification"}
+{"text": "عايز أشوف زياراتي", "lang": "ar", "intent": "get_visits"}
+{"text": "أظهر الزيارات ذات الأولوية المنخفضة من 1 أكتوبر 2026 إلى 15 أكتوبر 2026", "lang": "ar", "intent": "get_visits"}
+{"text": "Give me medium-priority visits for my team?", "lang": "en", "intent": "get_visits"}
+{"text": "وش عندي؟", "lang": "ar", "intent": "needs_clarification"}
+{"text": "How many visits do I have that are private for the canceled ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "ارفض زيارة الفرع", "lang": "ar", "intent": "refused_write"}
+{"text": "What are my low-priority tasks?", "lang": "en", "intent": "get_tasks"}
+{"text": "How many activities do I have of my team?", "lang": "en", "intent": "get_dashboard"}
+{"text": "أظهر لي مهامي الخاصة السرية؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "ما مهام بأولوية عالية؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "What about my stuff?", "lang": "en", "intent": "needs_clarification"}
+{"text": "اعرض المهام المرفوضة الخاصة السرية", "lang": "ar", "intent": "get_tasks"}
+{"text": "أظهر لي مهامي بأولوية عالية لفريقي", "lang": "ar", "intent": "get_tasks"}
+{"text": "Can you show visits?", "lang": "en", "intent": "get_visits"}
+{"text": "Main activities list with medium-priority about report", "lang": "en", "intent": "get_main_activities"}
+{"text": "كم مهمة عندي المحددة كخاصة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "ساعدني", "lang": "ar", "intent": "needs_clarification"}
+{"text": "اعرض لي زياراتي المحددة كخاصة منذ 1 يوليو 2026", "lang": "ar", "intent": "get_visits"}
+{"text": "اعرض لي مهامي", "lang": "ar", "intent": "get_tasks"}
+{"text": "Show the main list that are rejected", "lang": "en", "intent": "get_main_activities"}
+{"text": "أظهر لي الزيارات بأولوية عالية", "lang": "ar", "intent": "get_visits"}
+{"text": "اعرض لوحة المتابعة المحددة كخاصة؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "هات مهامي", "lang": "ar", "intent": "get_tasks"}
+{"text": "Get canceled visits until 2026-06-30?", "lang": "en", "intent": "get_visits"}
+{"text": "Assign this task to my colleague", "lang": "en", "intent": "refused_write"}
+{"text": "Get my tasks since 2026-07-01", "lang": "en", "intent": "get_tasks"}
+{"text": "أظهر الزيارات بأولوية عالية المحددة كخاصة", "lang": "ar", "intent": "get_visits"}
+{"text": "Give me medium priority tasks for my team for today", "lang": "en", "intent": "get_tasks"}
+{"text": "The pending ones", "lang": "en", "intent": "needs_clarification"}
+{"text": "Can you show medium priority visits mentioning training", "lang": "en", "intent": "get_visits"}
+{"text": "ورّيني الزيارات", "lang": "ar", "intent": "get_visits"}
+{"text": "Remove all cancelled tasks", "lang": "en", "intent": "refused_write"}
+{"text": "هات زياراتي", "lang": "ar", "intent": "get_visits"}
+{"text": "هات الزيارات لفريقي", "lang": "ar", "intent": "get_visits"}
+{"text": "أظهر لي مهامي قيد التنفيذ", "lang": "ar", "intent": "get_tasks"}
+{"text": "اعرض لي مهامي التي تخص العقود أمس؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Can you show finished tasks that are private", "lang": "en", "intent": "get_tasks"}
+{"text": "ماذا لدي؟", "lang": "ar", "intent": "needs_clarification"}
+{"text": "أنهِ زيارة الجرد", "lang": "ar", "intent": "refused_write"}
+{"text": "Reschedule my visit to next Monday", "lang": "en", "intent": "refused_write"}
+{"text": "ترجم مرحبا للفرنسية", "lang": "ar", "intent": "out_of_scope"}
+{"text": "Can you show tasks mentioning maintenance", "lang": "en", "intent": "get_tasks"}
+{"text": "For today", "lang": "en", "intent": "needs_clarification"}
+{"text": "احذف زيارة المستودع", "lang": "ar", "intent": "refused_write"}
+{"text": "اعرض زياراتي ذات الأولوية المتوسطة الأسبوع الماضي", "lang": "ar", "intent": "get_visits"}
+{"text": "Can you show my visits that are private?", "lang": "en", "intent": "get_visits"}
+{"text": "كم نشاط متأخر اليوم؟", "lang": "ar", "intent": "get_dashboard"}
+{"text": "ألغِ زيارة اليوم", "lang": "ar", "intent": "refused_write"}
+{"text": "عدّل عنوان زيارتي", "lang": "ar", "intent": "refused_write"}
+{"text": "Create a private task for me", "lang": "en", "intent": "refused_write"}
+{"text": "القائمة الرئيسية للمهام بأولوية منخفضة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "Show the dashboard marked private?", "lang": "en", "intent": "get_dashboard"}
+{"text": "هات المهام بأولوية منخفضة التي تخص العقود", "lang": "ar", "intent": "get_tasks"}
+{"text": "Check me in to my visit", "lang": "en", "intent": "refused_write"}
+{"text": "اعرض مهامي ذات الأولوية العالية المحددة كخاصة؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "كم عدد الزيارات ذات الأولوية المتوسطة؟", "lang": "ar", "intent": "get_visits"}
+{"text": "List medium-priority visits mentioning supplier this month", "lang": "en", "intent": "get_visits"}
+{"text": "أبغى أشوف المهام", "lang": "ar", "intent": "get_tasks"}
+{"text": "List tasks mentioning inspection from today onwards?", "lang": "en", "intent": "get_tasks"}
+{"text": "Translate hello to French", "lang": "en", "intent": "out_of_scope"}
+{"text": "قائمة الأنشطة الرئيسية بأولوية متوسطة", "lang": "ar", "intent": "get_main_activities"}
+{"text": "عايز أشوف مهامي", "lang": "ar", "intent": "get_tasks"}
+{"text": "What do I have?", "lang": "en", "intent": "needs_clarification"}
+{"text": "اعرض لي مهامي ذات الأولوية المتوسطة عن المورد", "lang": "ar", "intent": "get_tasks"}
+{"text": "I want to see low-priority tasks about branch that are upcoming", "lang": "en", "intent": "get_tasks"}
+{"text": "كم حاصل 15 في 4؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "How many activities do I have for the rejected ones?", "lang": "en", "intent": "get_dashboard"}
+{"text": "How many activities do I have?", "lang": "en", "intent": "get_dashboard"}
+{"text": "وافق على المهمة المعلقة", "lang": "ar", "intent": "refused_write"}
+{"text": "أظهر المهام؟", "lang": "ar", "intent": "get_tasks"}
+{"text": "Show the master tasks about inspection", "lang": "en", "intent": "get_main_activities"}
+{"text": "Display visits from today onwards", "lang": "en", "intent": "get_visits"}
+{"text": "من هو مديري؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "أبغى أشوف زياراتي المكتملة ذات الأولوية المتوسطة", "lang": "ar", "intent": "get_visits"}
+{"text": "I want to see waiting tasks in the last 7 days", "lang": "en", "intent": "get_tasks"}
+{"text": "Give me my visits for everyone I can see this month", "lang": "en", "intent": "get_visits"}
+{"text": "الأنشطة", "lang": "ar", "intent": "needs_clarification"}
+{"text": "عطّل النشاط الرئيسي", "lang": "ar", "intent": "refused_write"}
+{"text": "كم ساعات العمل الإضافي؟", "lang": "ar", "intent": "out_of_scope"}
+{"text": "I want to see my visits", "lang": "en", "intent": "get_visits"}
